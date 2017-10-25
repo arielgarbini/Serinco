@@ -1,0 +1,102 @@
+    .bancos{padding:5px;overflow:hidden;}
+    .color-orange{color:#ED6907!important;}
+    .color-grey{color:#4D4D4D!important;}
+    .uppercase{text-transform:uppercase!important;}
+    .lg-text-extra-small { font-size:10px !important; line-height:15px!important;}
+    .lg-text-small { font-size:11px !important; line-height:15px!important;}
+    .lg-text-medium{ font-size:14px !important; line-height:25px !important;}
+    .lg-text-large { font-size: 15px !important; line-height: 20px !important; }
+    .lg-text-extra-large { font-size: 18px !important; line-height: 25px !important;  }
+    .lg-title-small{ font-size:18px !important; line-height:25px !important;}
+    .lg-title-medium{ font-size:24px !important; line-height:28px !important;}
+    .lg-title-large{ font-size:28px !important; line-height:34px !important;}
+    .lg-title-extra-large{ font-size:35px !important; line-height:40px !important;}
+    .lg-title-extra-large-2{ font-size:40px !important; line-height:48px !important;}
+    .lg-title-extra-large-3{ font-size:50px !important; line-height:50px !important;}
+    .lg-title-extra-large-4{font-size:38px !important; line-height:52px !important;}
+    .lg-title-extra-large-5{ font-size:80px !important; line-height:50px !important;}
+    .width-75{width:75%!important;}
+    .no-padding-left{padding-left:0!important;}
+    .no-padding-right{padding-right:0!important;}
+    form{margin-top:40px;}
+    .no-padding{padding:0;}
+    .no-margin{margin:0!important;}
+    
+    /* margin-top */
+    .lg-margin-one-half-top{margin-top: 0.5% !important}
+    .lg-margin-one-top{margin-top:1% !important}
+    .lg-margin-two-top{margin-top:1.5% !important}
+    .lg-margin-three-top{margin-top:2% !important}
+    .lg-margin-four-top{margin-top:2.5% !important}
+    .lg-margin-five-top{margin-top:3% !important}
+    .lg-margin-six-top{margin-top:3.5% !important}
+    .lg-margin-seven-top{margin-top:4% !important}
+    .lg-margin-eight-top {margin-top:4.5% !important}
+    .lg-margin-nine-top{margin-top:5% !important}
+    .lg-margin-ten-top{margin-top:5.5% !important}
+    .lg-margin-eleven-top{margin-top:6% !important}
+    .lg-margin-twelve-top{margin-top:6.5% !important}
+    .lg-margin-thirteen-top{margin-top:7% !important}
+    .lg-margin-fourteen-top{margin-top:7.5% !important}
+    .lg-margin-fifteen-top{margin-top:8% !important}
+    .lg-margin-sixteen-top{margin-top:8.5% !important}
+    .lg-margin-seventeen-top{margin-top:9% !important}
+    .lg-margin-eighteen-top{margin-top:9.5% !important}
+    .lg-margin-nineteen-top{margin-top:10% !important}
+    .lg-margin-twenty-top{margin-top:10.5% !important}
+    .lg-margin-twenty-one-top{margin-top:11% !important}
+    .lg-margin-twenty-two-top{margin-top:11.5% !important}
+    .lg-margin-twenty-three-top{margin-top:12% !important}
+    .lg-margin-twenty-four-top{margin-top:12.5% !important}
+    .lg-margin-twenty-five-top{margin-top:13% !important}
+    .lg-margin-twenty-six-top{margin-top:13.5% !important}
+    .lg-margin-twenty-seven-top{margin-top:14% !important}
+    .lg-margin-twenty-eight-top{margin-top:14.5% !important}
+    .lg-margin-twenty-nine-top{margin-top:15% !important}
+    .lg-margin-thirty-top{margin-top:15.5% !important}
+    .lg-margin-thirty-one-top{margin-top:16% !important}
+    .lg-margin-thirty-two-top{margin-top:16.5% !important}
+    .lg-margin-thirty-three-top{margin-top:17% !important}
+    .lg-margin-thirty-four-top{margin-top:17.5% !important}
+    .lg-margin-thirty-five-top{margin-top:18% !important}
+    .lg-margin-top-10px{ margin-top:10px !important}
+
+    /* margin-bottom */
+    .lg-margin-one-half-bottom{margin-bottom: 0.5% !important}
+    .lg-margin-one-bottom{margin-bottom:1% !important}
+    .lg-margin-two-bottom{margin-bottom:1.5% !important}
+    .lg-margin-three-bottom{margin-bottom:2% !important}
+    .lg-margin-four-bottom{margin-bottom:2.5% !important}
+    .lg-margin-five-bottom{margin-bottom:3% !important}
+    .lg-margin-six-bottom{margin-bottom:3.5% !important}
+    .lg-margin-seven-bottom{margin-bottom:4% !important}
+    .lg-margin-eight-bottom {margin-bottom:4.5% !important}
+    .lg-margin-nine-bottom{margin-bottom:5% !important}
+    .lg-margin-ten-bottom{margin-bottom:5.5% !important}
+    .lg-margin-eleven-bottom{margin-bottom:6% !important}
+    .lg-margin-twelve-bottom{margin-bottom:6.5% !important}
+    .lg-margin-thirteen-bottom{margin-bottom:7% !important}
+    .lg-margin-fourteen-bottom{margin-bottom:7.5% !important}
+    .lg-margin-fifteen-bottom{margin-bottom:8% !important}
+    .lg-margin-sixteen-bottom{margin-bottom:8.5% !important}
+    .lg-margin-seventeen-bottom{margin-bottom:9% !important}
+    .lg-margin-eighteen-bottom{margin-bottom:9.5% !important}
+    .lg-margin-nineteen-bottom{margin-bottom:10% !important}
+    .lg-margin-twenty-bottom{margin-bottom:10.5% !important}
+    .lg-margin-twenty-one-bottom{margin-bottom:11% !important}
+    .lg-margin-twenty-two-bottom{margin-bottom:11.5% !important}
+    .lg-margin-twenty-three-bottom{margin-bottom:12% !important}
+    .lg-margin-twenty-four-bottom{margin-bottom:12.5% !important}
+    .lg-margin-twenty-five-bottom{margin-bottom:13% !important}
+    .lg-margin-twenty-six-bottom{margin-bottom:13.5% !important}
+    .lg-margin-twenty-seven-bottom{margin-bottom:14% !important}
+    .lg-margin-twenty-eight-bottom{margin-bottom:14.5% !important}
+    .lg-margin-twenty-nine-bottom{margin-bottom:15% !important}
+    .lg-margin-thirty-bottom{margin-bottom:15.5% !important}
+    .lg-margin-thirty-one-bottom{margin-bottom:16% !important}
+    .lg-margin-thirty-two-bottom{margin-bottom:16.5% !important}
+    .lg-margin-thirty-three-bottom{margin-bottom:17% !important}
+    .lg-margin-thirty-four-bottom{margin-bottom:17.5% !important}
+    .lg-margin-thirty-five-bottom{margin-bottom:18% !important}
+    .lg-margin-bottom-10px{ margin-bottom:10px !important}
+
