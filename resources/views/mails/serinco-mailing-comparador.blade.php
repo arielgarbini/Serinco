@@ -97,20 +97,44 @@
                                                         <table cellpadding="0" cellspacing="0" border="0">
                                                             <tr>
                                                                 <td valign="middle" align="left" colspan="3" style="padding-left:20px;">
-                                                                    <h1 style="font-size:44px;line-height:46px;font-family:'Montserrat', sans-serif;color:#005FB1;font-weight:700;margin:0;padding:0;">Tu consulta en Serinco Digital</h1>
+                                                                    <h1 style="font-size:44px;line-height:46px;font-family:'Montserrat', sans-serif;color:#005FB1;font-weight:700;margin:0;padding:0;">Nueva consulta en Serinco Digital</h1>
                                                                 </td>
                                                             </tr>
                                                             <tr><td valign="middle" height="10" align="left"></td></tr>
                                                             <tr>
                                                                 <td valign="middle" align="left" colspan="3" style="padding-left:20px;">
-                                                                    <h2 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">Estos son los datos de tu consulta. Tu solicitud fue enviada al banco y ellos te contactarán a la brevedad. Si tenés alguna inquietud adicional, te invitamos a visitar las siguientes secciones:</h2>
+                                                                    <h2 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">Estos son los datos de una nueva consulta:</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr><td valign="middle" height="30" align="left" style="padding-left:20px;"></td></tr>
                                                             <tr>
                                                                 <td valign="middle" align="left" colspan="3" style="padding-left:20px;">
-                                                                    <a href="http://serinco.coffeetalk.com.ar/comparador#Preguntas" target="_blank" style="font-size:16px;font-family:'Montserrat', sans-serif;background-color:#ED6907;border-radius:20px;color:#fff;font-weight:400;margin:0;padding:10px 25px;text-decoration:none;">¿Alguna pregunta?</a>
-                                                                    <a href="http://serinco.coffeetalk.com.ar/comparador#Preguntas" target="_blank" style="font-size:16px;font-family:'Montserrat', sans-serif;background-color:#fff;border:1px solid #B2B2C9;border-radius:20px;color:#005FB1;font-weight:400;margin:0;padding:10px 25px;text-decoration:none;">Comparador</a>
+                                                                    <table width="100%">
+                                                                        <tr>
+                                                                            <th align="left" width="60%">Nombre:</th>
+                                                                            <td align="left">{{$data['name']}}</td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <th align="left" >Dni:</th>
+                                                                            <td align="left">{{$data['dni']}}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <th align="left" >Correo electrónico:</th>
+                                                                            <td align="left">{{$data['email']}}</td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <th align="left" >Télefono:</th>
+                                                                            <td align="left">{{$data['phone']}}</td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <th align="left" >Solicita certificado de vivienda única?:</th>
+                                                                            <td align="left">@if(isset($data['certificate'])) Si @else No @endif</td>
+                                                                        </tr>
+
+                                                                    </table>
                                                                 </td>
                                                             </tr>
                                                             <tr><td valign="middle" height="20" align="center"></td></tr>
@@ -121,7 +145,7 @@
                                                             <tr><td valign="middle" height="30" align="center"></td></tr>
                                                             <tr>
                                                                 <td valign="middle" align="center" colspan="3" style="">
-                                                                    <img src="http://www.coffeetalk.com.ar/clientes/serinco/img/bancos/logo-bbva.png" style="width:100px;display:inline-block;"/>
+                                                                    <img src="/bancos/{{$bank->imagen}}" style="width:100px;display:inline-block;"/>
                                                                 </td>
                                                             </tr>
                                                             <tr><td valign="middle" height="15" align="left"></td></tr>
@@ -129,7 +153,7 @@
                                                             <tr>
                                                                 <td valign="middle" align="center" colspan="3" style="">
                                                                     <h4 style="font-size:18px;line-height:22px;font-family:'Montserrat', sans-serif;color:#000;font-weight:700;margin:0;padding:0;">Máximo a financiar</h4>
-                                                                    <h5 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">$5.000.000</h5>
+                                                                    <h5 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">${{number_format($bank->max_finance, 0, ',', '.')}}</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr><td valign="middle" height="15" align="left"></td></tr>
@@ -137,7 +161,7 @@
                                                             <tr>
                                                                 <td valign="middle" align="center" colspan="3" style="">
                                                                     <h4 style="font-size:18px;line-height:22px;font-family:'Montserrat', sans-serif;color:#000;font-weight:700;margin:0;padding:0;">Tasa anual</h4>
-                                                                    <h5 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">6,9%</h5>
+                                                                    <h5 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">{{number_format($bank->tasa_anual, 2, ',', '.')}}%</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr><td valign="middle" height="15" align="left"></td></tr>
@@ -145,7 +169,7 @@
                                                             <tr>
                                                                 <td valign="middle" align="center" colspan="3" style="">
                                                                     <h4 style="font-size:18px;line-height:22px;font-family:'Montserrat', sans-serif;color:#000;font-weight:700;margin:0;padding:0;">Primera cuota</h4>
-                                                                    <h5 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">$2.700,00</h5>
+                                                                    <h5 style="font-size:16px;line-height:20px;font-family:'Montserrat', sans-serif;color:#4D4D4D;font-weight:400;margin:0;padding:0;">{{$data['resul']}}</h5>
                                                                 </td>
                                                             </tr>
                                                             <tr><td valign="middle" height="30" align="center"></td></tr>

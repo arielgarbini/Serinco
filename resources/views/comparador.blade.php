@@ -106,484 +106,47 @@
                 <div class="container">
                     <div class="row animatedParent animateOnce" data-sequence="500">
                         <!--BANCO BBVA-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="1">
+                        @foreach($banks as $bank)
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="{{$bank->id}}">
                             <table>
                                 <thead>
                                     <tr>
                                         <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-bbva.png"/>
+                                            <img class="img-responsive xs-display-inline-block" src="/bancos/{{$bank->imagen}}"/>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$5.000.000</h2>
+                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">@if($bank->max_finance=='') Sin Limite @else {{number_format($bank->max_finance, 0, ',', '.')}} @endif</h2>
                                             <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">6,9%</h2>
+                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">{{number_format($bank->tasa_anual, 2, ',', '.')}}%</h2>
                                             <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_BBVA"></h2>
+                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_{{$bank->id}}"></h2>
                                             <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
+                                            <a data-value="{{$bank->id}}" data-resul="" id="cuota_hidden_{{$bank->id}}" class="bank-selected btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
                                             <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                        @endforeach
                         <!--BANCO BBVA-->
 
-                        <!--BANCO CIUDAD-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="2">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-ciudad.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$2.000.000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">6,13%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4"id="cuota_ciudad"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO CIUDAD-->
-
-                        <!--BANCO GALICIA-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="3">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-galicia.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$5.000,000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">4,9%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_galicia"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO GALICIA-->
-
-                        <!--BANCO HIPOTECARIO-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="4">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-hipotecario.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$2.000,000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">7,9%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_hipotecario"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO HIPOTECARIO-->
-
-                        <!--BANCO CÓRDOBA-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="5">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-bancor.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$2.500.000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">4.9%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_HSBC"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO CÓRDOBA-->
-
-                        <!--BANCO ICBC-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="6">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-icbc.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$4.000.000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">5,9%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_ICBC"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO ICBC-->
-
-                        <!--BANCO ITAÚ-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="7">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-itau.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">Sin Limite</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">4.87%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_ITAU"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO ITAÚ-->
-
-                        <!--BANCO MACRO-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="8">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-macro.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$16.000.000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">3,5%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_macro"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO MACRO-->
-
-                        <!--BANCO NACIÓN-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="9">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-nacion.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$2.600.000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">3,5%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_BNA"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>  
-                        <!--BANCO NACIÓN-->
-
-                        <!--BANCO PROVINCIA-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="10">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-provincia.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$3.000.000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">5,9%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_provincia"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO PROVINCIA-->
-
-                        <!--BANCO SANTANDER-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="11">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-santander.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">$5.000.000</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">4,95%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_santander"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO SANTANDER-->
-
-                        <!--BANCO SUPERVILLE-->
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="12">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="img/bancos/logo-supervielle.png"/>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">Sin Limite</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">4,9%</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_supervielle"></h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="">
-                                            <a class="btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
-                                            <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <!--BANCO SUPERVILLE-->
                     </div>
                     <hr/>
                 </div>
@@ -629,46 +192,48 @@
             </section>          
         </main>
         <!--MAIN-->
-
 		<!--FOOTER-->
-        @include("footer")
+        @include("footer", ['banks'=>$banks])
 		<!--FOOTER-->
 		
         <!--MODAL SOLICITAR CRÉDITO-->
         <div id="SolicitarCredito" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
+                    <form action="sendcotizacion" method="POST" autocomplete="off" class="no-margin">
                     <div class="modal-body">
-                        <form action="" method="" autocomplete="off" class="no-margin">
+                            {{csrf_field()}}
+                            <input type="hidden" name="bank" id="bank">
+                            <input type="hidden" name="resul" id="resul">
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Nombre completo</label>
-                                <input id="" name="" type="text" autocomplete="off" placeholder="Nombre y apellido" required>
+                                <input id="" name="name" type="text" autocomplete="off" placeholder="Nombre y apellido" required>
                             </div>
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Documento de identidad</label>
-                                <input id="" name="" type="text" autocomplete="off" placeholder="DNI o Cédula" required>
+                                <input id="" name="dni" type="text" autocomplete="off" placeholder="DNI o Cédula" required>
                             </div>
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Correo electrónico</label>
-                                <input id="" name="" type="email" autocomplete="off" placeholder="Por ejemplo: nombre@serinco.com" required>
+                                <input id="" name="email" type="email" autocomplete="off" placeholder="Por ejemplo: nombre@serinco.com" required>
                             </div>
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Teléfono de contacto</label>
-                                <input id="" name="" type="number" autocomplete="off" placeholder="Por ejemplo: +54111234567" required>
+                                <input id="" name="phone" type="number" autocomplete="off" placeholder="Por ejemplo: +54111234567" required>
                             </div>
                             <div class="">
-                                <input id="" name="" type="checkbox" checked autocomplete="off" required>
+                                <input id="" name="certificate" type="checkbox" checked autocomplete="off" required>
                                 <small class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><i>Solicitar certificado de vivienda única</i></small>
 
                             </div>
-                        </form>
                     </div>
                     <div class="modal-footer">
                         <div class="btns text-center">
-                            <a class="btn btn-popsicle" data-text="Quiero comprar" data-style="Button - Popsicle" href="" target="_blank">Contactate con el banco</a> 
+                            <button type="submit" class="btn btn-popsicle" data-text="Quiero comprar" data-style="Button - Popsicle" href="" target="_blank">Contactate con el banco</button>
                             <a class="btn btn-white" data-dismiss="modal">Cancelar</a>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>      

@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading">Usuarios
                     <a href= "/adduser"  style="margin-top:-7px; float:right;" class="btn btn-success" >Nuevo Usuario</a>

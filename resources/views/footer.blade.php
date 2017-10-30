@@ -97,32 +97,34 @@
         <div id="Unite" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
+                    <form action="sendcv" method="POST" enctype="multipart/form-data" autocomplete="off" class="no-margin">
+                        {{csrf_field()}}
                     <div class="modal-body">
-                        <form action="" method="" autocomplete="off" class="no-margin">
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Nombre completo</label>
-                                <input id="" name="" type="text" autocomplete="off" placeholder="Nombre y apellido" required>
+                                <input id="" name="name" type="text" autocomplete="off" placeholder="Nombre y apellido" required>
                             </div>
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Correo electrónico</label>
-                                <input id="" name="" type="email" autocomplete="off" placeholder="Por ejemplo: nombre@serinco.com" required>
+                                <input id="" name="email" type="email" autocomplete="off" placeholder="Por ejemplo: nombre@serinco.com" required>
                             </div>
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Teléfono de contacto</label>
-                                <input id="" name="" type="number" autocomplete="off" placeholder="Por ejemplo: +54111234567" required>
+                                <input id="" name="number" type="number" autocomplete="off" placeholder="Por ejemplo: +54111234567" required>
                             </div>
                             <div class="">
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Envianos tu CV</label>
-                                <input id="" name="" type="file" autocomplete="off" placeholder="Envianos tu CV" required>
+                                <input id="" name="cv" type="file" autocomplete="off" placeholder="Envianos tu CV" required>
                             </div>
-                        </form>
+
                     </div>
                     <div class="modal-footer">
                         <div class="btns text-center">
-                            <a class="btn btn-popsicle" data-text="Quiero comprar" data-style="Button - Popsicle" href="" target="_blank">Envianos tu consulta</a> 
+                            <button type="submit" class="btn btn-popsicle" data-text="Quiero comprar" data-style="Button - Popsicle" >Envianos tu consulta</button>
                             <a class="btn btn-white" data-dismiss="modal">Cancelar</a>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>      		
@@ -136,7 +138,13 @@
         <script src="{{asset('js/mask.js')}}"></script>
         <!--JS-->
         <script>
+        $(document).ready(function(){
+            $('.bank-selected').click(function(){
+              $('#bank').val($(this).attr('data-value'));
+              $('#resul').val($(this).attr('data-resul'));
 
+            });
+        });
         function enviarContacto() {
     
         // get the form data
@@ -163,13 +171,33 @@
         if($('#ingreso_mensual')[0].checkValidity()==true && $('#valor_inmueble')[0].checkValidity()==true && $('#monto_financiar')[0].checkValidity()==true && $('#plazo_solicitado')[0].checkValidity()==true) {
             if($("#monto_financiar").val()>($("#valor_inmueble").val()*0.65)){
                 alert("El monto a financiar no puede superar el 65% del valor del inmueble");
+            } else if(parseFloat($('#ingreso_mensual').val()) < 9500) {
+                alert("El salario minimo permitido es de $9.500,00");
+            }else if(parseFloat($('#valor_inmueble').val()) < 1200000) {
+                alert("El valor minimo de la propiedad permitido es de $1.200.000,00");
             }else{
         $('#pricing-table').css('display','')
         var ingreso_mensual = $("#ingreso_mensual").val();
         var valor_inmueble = $("#valor_inmueble").val();
         var monto_financiar = $("#monto_financiar").val();
         var plazo_solicitado = $("#plazo_solicitado").val();
-        
+        @if(isset($banks))
+        @foreach($banks as $bank)
+            var tasa_{{$bank->id}} = {{$bank->tasa_anual}}/100;
+            @if($bank->max_finance=='')
+                var data_{{$bank->id}} = [(valor_inmueble*75)/100,{{$bank->finance}},{{$bank->time}},{{$bank->percentaje_cuota}}]
+            @else
+                var data_{{$bank->id}} = [{{$bank->max_finance}},{{$bank->finance}},{{$bank->time}},{{$bank->percentaje_cuota}}]
+            @endif
+            var montoCuota_{{$bank->id}} = (ingreso_mensual * data_{{$bank->id}}[3])/100;
+            var tiempo_{{$bank->id}} = Math.min(data_{{$bank->id}}[2],plazo_solicitado);
+            var max_{{$bank->id}} = parseInt(((1-Math.pow((1+tasa_{{$bank->id}}/12), -(tiempo_{{$bank->id}}*12)))/(tasa_{{$bank->id}}/12))*montoCuota_{{$bank->id}});
+            var financiar_{{$bank->id}} = Math.min((valor_inmueble*data_{{$bank->id}}[1])/100, data_{{$bank->id}}[0], monto_financiar,max_{{$bank->id}});
+            var resul_{{$bank->id}} = parseInt(financiar_{{$bank->id}}/((1-Math.pow((1+tasa_{{$bank->id}}/12), -(tiempo_{{$bank->id}}*12)))/(tasa_{{$bank->id}}/12)))+1;
+            $('#cuota_{{$bank->id}}').html('$'+resul_{{$bank->id}});
+            $('#cuota_hidden_{{$bank->id}}').attr('data-resul', '$'+resul_{{$bank->id}});
+        @endforeach
+        @endif
         var hipotecario_tasa = 7.9/100;
         var ciudad_tasa = 6.13/100;
         var provincia_tasa = 5.9/100;

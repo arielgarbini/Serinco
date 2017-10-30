@@ -17,7 +17,8 @@ Route::get('/', function () {
 });
 
 Route::get('/comparador', function () {
-    return view('comparador');
+    $banks = \App\Bank::where('is_active', '1')->get();
+    return view('comparador', compact('banks'));
 });
 
 Route::get('/thankyou', function () {
@@ -96,3 +97,26 @@ Route::post('editNew', 'NewsController@postEditNew');
 Route::get('deleteNew/{id}', 'NewsController@deleteNew');
 Route::get('approveNew/{id}', 'NewsController@approveNew');
 
+
+Route::group(['prefix' => 'banks'], function(){
+
+    Route::get('/', 'BanksController@index');
+    Route::get('{id}/edit', 'BanksController@edit');
+    Route::get('{id}/delete', 'BanksController@delete');
+    Route::get('{id}/approve', 'BanksController@approve');
+    Route::get('create', 'BanksController@create');
+    Route::post('{id}/update', 'BanksController@update');
+    Route::post('store', 'BanksController@store');
+});
+
+
+Route::group(['prefix' => 'cvs'], function(){
+
+    Route::get('/', 'CvController@index');
+    Route::get('{id}', 'CvController@show');
+    Route::get('{id}/delete', 'CvController@delete');
+});
+
+Route::post('sendcv', 'CvController@sendcv');
+
+Route::post('sendcotizacion', 'BanksController@sendcotizacion');
