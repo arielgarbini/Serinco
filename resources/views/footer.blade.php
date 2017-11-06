@@ -144,6 +144,17 @@
               $('#resul').val($(this).attr('data-resul'));
 
             });
+
+            $('#delete-inputs').click(function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                $("#ingreso_mensual").val('');
+                $("#valor_inmueble").val('');
+                $("#monto_financiar").val('');
+                $("#plazo_solicitado").val('');
+                $('#pricing-table').css('display','none');
+                return false;
+            })
         });
         function enviarContacto() {
     
@@ -176,26 +187,31 @@
             }else if(parseFloat($('#valor_inmueble').val()) < 1200000) {
                 alert("El valor minimo de la propiedad permitido es de $1.200.000,00");
             }else{
-        $('#pricing-table').css('display','')
+        $('#pricing-table').css('display','');
         var ingreso_mensual = $("#ingreso_mensual").val();
         var valor_inmueble = $("#valor_inmueble").val();
         var monto_financiar = $("#monto_financiar").val();
         var plazo_solicitado = $("#plazo_solicitado").val();
         @if(isset($banks))
         @foreach($banks as $bank)
-            var tasa_{{$bank->id}} = {{$bank->tasa_anual}}/100;
-            @if($bank->max_finance=='')
-                var data_{{$bank->id}} = [(valor_inmueble*75)/100,{{$bank->finance}},{{$bank->time}},{{$bank->percentaje_cuota}}]
-            @else
+            if((parseInt("{{$bank->time}}") >=parseInt(plazo_solicitado)) && (parseFloat(monto_financiar)<=parseFloat("{{$bank->max_finance}}") || "{{$bank->max_finance}}"=="")) {
+                var tasa_{{$bank->id}} = {{$bank->tasa_anual}}/100;
+                        @if($bank->max_finance=='')
+                var data_{{$bank->id}} = [(valor_inmueble * 75) / 100,{{$bank->finance}},{{$bank->time}},{{$bank->percentaje_cuota}}]
+                        @else
                 var data_{{$bank->id}} = [{{$bank->max_finance}},{{$bank->finance}},{{$bank->time}},{{$bank->percentaje_cuota}}]
-            @endif
-            var montoCuota_{{$bank->id}} = (ingreso_mensual * data_{{$bank->id}}[3])/100;
-            var tiempo_{{$bank->id}} = Math.min(data_{{$bank->id}}[2],plazo_solicitado);
-            var max_{{$bank->id}} = parseInt(((1-Math.pow((1+tasa_{{$bank->id}}/12), -(tiempo_{{$bank->id}}*12)))/(tasa_{{$bank->id}}/12))*montoCuota_{{$bank->id}});
-            var financiar_{{$bank->id}} = Math.min((valor_inmueble*data_{{$bank->id}}[1])/100, data_{{$bank->id}}[0], monto_financiar,max_{{$bank->id}});
-            var resul_{{$bank->id}} = parseInt(financiar_{{$bank->id}}/((1-Math.pow((1+tasa_{{$bank->id}}/12), -(tiempo_{{$bank->id}}*12)))/(tasa_{{$bank->id}}/12)))+1;
-            $('#cuota_{{$bank->id}}').html('$'+resul_{{$bank->id}});
-            $('#cuota_hidden_{{$bank->id}}').attr('data-resul', '$'+resul_{{$bank->id}});
+                        @endif
+                var montoCuota_{{$bank->id}} = (ingreso_mensual * data_{{$bank->id}}[3]) / 100;
+                var tiempo_{{$bank->id}} = Math.min(data_{{$bank->id}}[2], plazo_solicitado);
+                var max_{{$bank->id}} = parseInt(((1 - Math.pow((1 + tasa_{{$bank->id}}/ 12), -(tiempo_{{$bank->id}}* 12))) / (tasa_{{$bank->id}}/ 12)) * montoCuota_{{$bank->id}});
+                var financiar_{{$bank->id}} = Math.min((valor_inmueble * data_{{$bank->id}}[1]) / 100, data_{{$bank->id}}[0], monto_financiar, max_{{$bank->id}});
+                var resul_{{$bank->id}} = parseInt(financiar_{{$bank->id}}/ ((1 - Math.pow((1 + tasa_{{$bank->id}}/ 12), -(tiempo_{{$bank->id}}* 12))) / (tasa_{{$bank->id}}/ 12))) + 1;
+                $('#cuota_{{$bank->id}}').html('$' + resul_{{$bank->id}});
+                $('#cuota_hidden_{{$bank->id}}').attr('data-resul', '$' + resul_{{$bank->id}});
+                $("#bank-display-{{$bank->id}}").show();
+            } else {
+                $("#bank-display-{{$bank->id}}").hide();
+            }
         @endforeach
         @endif
         var hipotecario_tasa = 7.9/100;

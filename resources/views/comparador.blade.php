@@ -94,7 +94,7 @@
                         <div class="col-lg-8 col-lg-offset-2 text-center xs-margin-ten-top sm-margin-five-top">
                             <div class="btns text-center">
                                 <a class="btn btn-popsicle" data-text="Quiero comprar" onClick="calcularCuota()" data-style="Button - Popsicle">Quiero comprar</a> 
-                                <a class="btn btn-white" data-text="Borrar datos"  href="http://www.coffeetalk.com.ar/clientes/serinco/comparador.html" data-style="Button - Popsicle">Borrar datos</a>
+                                <a class="btn btn-white" data-text="Borrar datos"  href="#" id="delete-inputs" data-style="Button - Popsicle">Borrar datos</a>
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                     <div class="row animatedParent animateOnce" data-sequence="500">
                         <!--BANCO BBVA-->
                         @foreach($banks as $bank)
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" data-id="{{$bank->id}}">
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" id="bank-display-{{$bank->id}}" data-id="{{$bank->id}}">
                             <table>
                                 <thead>
                                     <tr>
