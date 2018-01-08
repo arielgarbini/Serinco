@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Request as RequestFile;
-use Session;
+    use Session;
 use Auth;
 use App\Cv;
 use Mail;
+use App\Contact;
 
 
 class CvController extends Controller
@@ -87,6 +88,8 @@ class CvController extends Controller
 
                     $m->to(env('MAIL_COMPANY'), env('MAIL_COMPANY_NAME'))->subject('Cv recibido');
                 });
+                Contact::create(['name' => $cv->name, 'email' => $cv->email,
+                    'phone' => $cv->phone, 'type' => 'cv', 'cv' => $cv->cv]);
                 Session::flash('message', 'Cv enviado correctamente!!');
                 return Redirect::back();
             }

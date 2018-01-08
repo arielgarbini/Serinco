@@ -49,7 +49,7 @@
 										<input type="text" class="form-control" name="source" value="{{ old('source') }}">
 									</div>
 								</div>
-								
+
 								<div class="form-group">
 									<label class="col-md-4 control-label">Cuerpo</label>
 									<div class="col-md-6">
@@ -70,8 +70,8 @@
 										<input type="file" class="form-control" name="small_pic">
 									</div>
 								</div>
-                                                            
-								<div class="form-group">	
+
+								<div class="form-group">
 									<div class="col-md-6 col-md-offset-5"><br/>
 										<button type="submit" class="btn btn-primary">
 											Crear Publicación

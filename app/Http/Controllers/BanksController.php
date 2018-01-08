@@ -12,6 +12,7 @@ use Session;
 use Auth;
 use Mail;
 use App\Bank;
+use App\Contact;
 
 class BanksController extends Controller
 {
@@ -191,6 +192,8 @@ class BanksController extends Controller
 
             $m->to(env('MAIL_COMPANY'), env('MAIL_COMPANY_NAME'))->subject('Crédito cotizado');
         });
+            Contact::create(['name' => $request->name, 'dni' => $request->dni, 'email' => $request->email,
+                'phone' => $request->phone, 'type' => 'cotizacion']);
         Session::flash('message', 'Credito bancario solicitado correctamente!!');
         return Redirect::back();
     }

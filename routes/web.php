@@ -53,6 +53,8 @@ Route::post('contacto',function(){
     $message->to(' dcazorla@coffeetalk.com.ar');
 
 });
+	\App\Contact::create(['name' => Request::get('name'), 'phone' => Request::get('tel'),
+        'email' => Request::get('email'), 'type' => 'contacto']);
     return $data;	
 }
 
@@ -64,7 +66,7 @@ Route::get('/soluciones', function () {
 
 Route::get('/novedades', function () {
 	$news = \App\News::where('is_approved','=','1')->where('is_active','=','1')->get();
-    return view('novedades')->with('news',$news);
+	return view('novedades')->with('news',$news)->with('data', []);
 });
 
 Route::get('noticia/{id}', function ($id = null){
@@ -117,6 +119,13 @@ Route::group(['prefix' => 'cvs'], function(){
     Route::get('{id}/delete', 'CvController@delete');
 });
 
+Route::group(['prefix' => 'contacts'], function(){
+
+    Route::get('/', 'ContactsController@index');
+    Route::get('{id}', 'ContactsController@show');
+    Route::get('{id}/delete', 'ContactsController@delete');
+});
+
 Route::post('sendcv', 'CvController@sendcv');
 
-Route::post('sendcotizacion', 'BanksController@sendcotizacion');
+    Route::post('sendcotizacion', 'BanksController@sendcotizacion');

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ITWarp Consulting</title>
+    <title>Serinco</title>
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -142,6 +142,8 @@
                     <li class="{{ Request::is('banks*') ? 'active open' : ''  }}"><a href="{{ url('/banks') }}"><i class="fa fa-link"></i> <span>Bancos</span></a></li>
 
                     <li class="{{ Request::is('cvs*') ? 'active open' : ''  }}"><a href="{{ url('/cvs') }}"><i class="fa fa-link"></i> <span>Cvs</span></a></li>
+
+                    <li class="{{ Request::is('contacts*') ? 'active open' : ''  }}"><a href="{{ url('/contacts') }}"><i class="fa fa-link"></i> <span>Contactos</span></a></li>
                 @endif
                 <!--
                 <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
