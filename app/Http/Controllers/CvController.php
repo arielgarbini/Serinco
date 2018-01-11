@@ -83,15 +83,8 @@ class CvController extends Controller
             $cv->phone = Input::get('number');
 
             if($cv->save()){
-                Mail::send('mails.cv', ['data' => $request->all()], function ($m){
-                    $m->from('Serinco@clientship.com', 'Cv recibido');
-
-                    $m->to(env('MAIL_COMPANY'), env('MAIL_COMPANY_NAME'))->subject('Cv recibido');
-                });
-                Contact::create(['name' => $cv->name, 'email' => $cv->email,
-                    'phone' => $cv->phone, 'type' => 'cv', 'cv' => $cv->cv]);
                 Session::flash('message', 'Cv enviado correctamente!!');
-                return Redirect::back();
+                return Redirect::route('thankyou');
             }
 
 

@@ -30,13 +30,13 @@
 								@foreach($contacts as $cv)
                                     <?php $i++; ?>
 									<tr>
-										<th>{{ $i }}</th>
+										<th>{{ $cv->id }}</th>
 										<td>{{ $cv->name }}</td>
 										<td>{{ $cv->email }}</td>
 										<td>{{ $cv->phone }}</td>
 										<td>{{ $cv->type }}</td>
 										<td>{{ $cv->created_at->format('d/m/Y') }}</td>
-										<td><a href= "/contacts/{{$cv->id}}" class="btn btn-info" >Ver</a>&nbsp;&nbsp;<a href= "contacts/{{$cv->id}}/delete" onClick="return confirm('¿Esta seguro?');" class="btn btn-danger" >Eliminar</a> </td>
+										<td><a href= "{{route('show.contacts', $cv->id)}}" class="btn btn-info" >Ver</a>&nbsp;&nbsp;<a href= "{{route('delete.contacts', $cv->id)}}" onClick="return confirm('¿Esta seguro?');" class="btn btn-danger" >Eliminar</a> </td>
 									</tr>
 								@endforeach
 								</tbody>
@@ -45,6 +45,7 @@
 						</div>
 					</div>
 				</div>
+				{{$contacts->render()}}
 			</div>
 		</div>
 @endsection

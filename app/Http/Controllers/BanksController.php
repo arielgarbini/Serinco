@@ -178,23 +178,10 @@ class BanksController extends Controller
     public function sendcotizacion(Request $request)
     {
         $bank = Bank::find($request->bank);
-        $name = $request->name;
-        $email = $request->email;
-
-        Mail::send('mails.serinco-mailing-comparador-cliente', ['data' => $request->all(), 'bank' => $bank], function ($m) use($email, $name){
-            $m->from('Serinco@clientship.com', 'Cotización de crédito');
-
-            $m->to($email, $name)->subject('Crédito cotizado');
-        });
-
-        Mail::send('mails.serinco-mailing-comparador', ['data' => $request->all(), 'bank' => $bank], function ($m){
-            $m->from('Serinco@clientship.com', 'Cotización de crédito');
-
-            $m->to(env('MAIL_COMPANY'), env('MAIL_COMPANY_NAME'))->subject('Crédito cotizado');
-        });
-            Contact::create(['name' => $request->name, 'dni' => $request->dni, 'email' => $request->email,
-                'phone' => $request->phone, 'type' => 'cotizacion']);
+        Contact::create(['name' => $request->name, 'dni' => $request->dni, 'email' => $request->email,
+            'phone' => $request->phone, 'type' => 'cotizacion','certificate'=>$request->certificate,
+            'bank_id' => $bank->id, 'resul' => $request->resul]);
         Session::flash('message', 'Credito bancario solicitado correctamente!!');
-        return Redirect::back();
+        return Redirect::route('thankyou');
     }
 }

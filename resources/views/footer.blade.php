@@ -80,6 +80,10 @@
                                 <label for="" class="xs-title-large sm-title-large md-title-large">Teléfono de contacto</label>
                                 <input id="" name="tel" type="number" autocomplete="off" placeholder="Por ejemplo: +54111234567" required>
                             </div>
+                            <div class="">
+                                <label for="" class="xs-title-large sm-title-large md-title-large">Mensaje</label>
+                                <textarea id="mensaje" name="mensaje" type="text" autocomplete="off" placeholder="Tu consulta" required></textarea>
+                            </div>
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -157,19 +161,21 @@
             })
         });
         function enviarContacto() {
-    
+
         // get the form data
         // there are many ways to get this data using jQuery (you can use the class or id also)
         var formData = {
             'email'              : $('input[name=email]').val(),
             'name'             : $('input[name=name]').val(),
             'tel'             : $('input[name=tel]').val(),
+            'msj'             : $('#mensaje').val(),
             '_token'          : "{{ csrf_token() }}",
         };
 
         // process the form
         $.post('{{url("contacto")}}',formData,function(data){
-        alert('Muchas gracias. En breve nos pondremos en contacto con usted.');})
+            window.location = "{{route('thankyou')}}";
+        });
 
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();

@@ -23,7 +23,7 @@ Route::get('/comparador', function () {
 
 Route::get('/thankyou', function () {
     return view('thankyou');
-});
+})->name('thankyou');
 
 Route::get('/nosotros', function () {
     return view('nosotros');
@@ -36,27 +36,11 @@ Route::get('/gracias', function () {
 Route::post('contacto',function(){
    
 	if(Request::ajax()){
-   
-	$data['nombre'] = Request::get('name');
-
-	$data['telefono'] = Request::get('tel');
-
-	$data['email'] = Request::get('email');
-
-
-	Mail::send('mails.contacto', $data, function($message)  use ($data)
-{	
-	$message->subject('Contacto desde sitio - Serinco.com.ar');
-
-    $message->from('no-reply@serinco.com.ar', 'Serinco.com.ar');
-
-    $message->to(' dcazorla@coffeetalk.com.ar');
-
-});
-	\App\Contact::create(['name' => Request::get('name'), 'phone' => Request::get('tel'),
-        'email' => Request::get('email'), 'type' => 'contacto']);
-    return $data;	
-}
+        \App\Contact::create(['name' => Request::get('name'), 'phone' => Request::get('tel'),
+            'email' => Request::get('email'), 'type' => 'contacto',
+            'messages' => Request::get('msj')]);
+        return ['response' => true];
+    }
 
 });
 
@@ -121,9 +105,9 @@ Route::group(['prefix' => 'cvs'], function(){
 
 Route::group(['prefix' => 'contacts'], function(){
 
-    Route::get('/', 'ContactsController@index');
-    Route::get('{id}', 'ContactsController@show');
-    Route::get('{id}/delete', 'ContactsController@delete');
+    Route::get('/', 'ContactsController@index')->name('index.contacts');
+    Route::get('{id}', 'ContactsController@show')->name('show.contacts');
+    Route::get('{id}/delete', 'ContactsController@delete')->name('delete.contacts');
 });
 
 Route::post('sendcv', 'CvController@sendcv');

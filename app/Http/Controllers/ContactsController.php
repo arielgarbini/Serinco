@@ -29,7 +29,7 @@ class ContactsController extends Controller
     public function index()
     {
         $contacts = Contact::where('type', '!=', 'cv')
-            ->orderBy('created_at', 'desc')->get();
+            ->orderBy('created_at', 'desc')->paginate(5);
         return view('contacts.list', compact('contacts'));
     }
 
