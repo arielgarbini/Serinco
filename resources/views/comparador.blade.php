@@ -23,7 +23,7 @@
                     <div class="circle circle-1 inner raspberry animated fadeInLeftShort go" data-id="2" style="background-image:url('img/sections/slider.jpg');background-repeat:no-repeat;background-size:cover;"></div>
                     <div class="row animatedParent">
                         <div class="col-lg-12 animated fadeInLeftShort go xs-text-center sm-text-center">
-                            <h1>Encontrá el crédito <br/>que más te conviene</h1>
+                            <h1>Encontrá el crédito<br/>que más te conviene</h1>
                             <p>Con nuestro <a>Comparador de Créditos</a>, vas a descubrir las mejores opciones en los principales bancos de Argentina 😉</p>
                             <div class="btns">
                                 <a class="btn btn-popsicle" data-location="Home - hero" data-text="Vivienda única" data-style="Button - Popsicle" href="#ViviendaUnica">Buscar para Vivienda Única ahora</a>
@@ -38,22 +38,22 @@
                     <div class="row animatedParent animateOnce">
                         <div class="col-lg-9 animated fadeInLeftShort go">
                             <div class="col-lg-2 col-xs-3">
-                                <a><img class="img-responsive logos-home" src="img/bancos/logo-bbva.png"></a>
+                                <a><img class="img-responsive logos-home" src="bancos/logo-nacion.png"></a>
                             </div>
                             <div class="col-lg-2 col-xs-3">
-                                <a><img class="img-responsive logos-home" src="img/bancos/logo-ciudad.png"></a>
+                                <a><img class="img-responsive logos-home" src="bancos/logo-ciudad.png"></a>
                             </div>
                             <div class="col-lg-2 col-xs-3">
-                                <a><img class="img-responsive logos-home" src="img/bancos/logo-galicia.png"></a>
+                                <a><img class="img-responsive logos-home" src="bancos/logo-galicia.png"></a>
                             </div>
                             <div class="col-lg-2 col-xs-3">
-                                <a><img class="img-responsive logos-home" src="img/bancos/logo-santander.png"></a>
+                                <a><img class="img-responsive logos-home" src="bancos/logo-santander.png"></a>
                             </div>
                             <div class="col-lg-2 col-xs-3">
-                                <a><img class="img-responsive logos-home" src="img/bancos/logo-icbc.png"></a>
+                                <a><img class="img-responsive logos-home" src="bancos/logo-icbc.png"></a>
                             </div>
                             <div class="col-lg-2 col-xs-3">
-                                <a><img class="img-responsive logos-home" src="img/bancos/logo-nacion.png"></a>
+                                <a><img class="img-responsive logos-home" src="bancos/logo-bbva.png"></a>
                             </div>
                         </div>
                         <div class="col-lg-3 animated fadeInLeftShort go">
@@ -71,30 +71,29 @@
                             <h1 class="">Créditos para vivienda única</h1>
                             <p class="xs-margin-ten-bottom">¡Es muy fácil! Completá con tus datos y elegí si el crédito hipotecario es para comprar una vivienda o para construir una nueva. ¡En segundos tendrás el comparativo!</p>
                             <form action="" method="" autocomplete="off" class="">
-                                <div class="col-xs-12 col-sm-12 col-md-3 xs-no-padding sm-no-padding no-padding-left">
+                                <div class="col-xs-12 col-sm-12 col-md-4 xs-no-padding sm-no-padding no-padding-left">
                                     <label for="" class="xs-title-large sm-title-large">Ingreso mensual en pesos</label>
                                     <input id="ingreso_mensual" name="" type="number" autocomplete="off" placeholder="Individual o familiar" required>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-3 xs-no-padding sm-no-padding">
-                                    <label for="" class="xs-title-large sm-title-large">Valor del inmueble</label>
-                                    <input id="valor_inmueble" name="" type="number" autocomplete="off" placeholder="Monto en pesos" required>
+                                <div class="col-xs-12 col-sm-12 col-md-4 xs-no-padding sm-no-padding">
+                                    <label for="" class="xs-title-large sm-title-large">Edad</label>
+                                    <input id="edad" name="" type="number" autocomplete="off" placeholder="Edad" required>
                                 </div>
-                                <div class="col-xs-12 col-sm-12 col-md-3 xs-no-padding sm-no-padding">
-                                    <label for="" class="xs-title-large sm-title-large">Monto a financiar</label>
-                                    <input id="monto_financiar" class="number" name="" type="number" autocomplete="off" placeholder="Valor en pesos" required>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-3 xs-no-padding sm-no-padding no-padding-right">
+                                <div class="col-xs-12 col-sm-12 col-md-4 xs-no-padding sm-no-padding no-padding-right">
                                     <label for="" class="xs-title-large sm-title-large">Plazo solicitado</label>
-                                    <input id="plazo_solicitado" name="" type="number" autocomplete="off" placeholder="Crédito a cuántos años" required>
+                                    <input id="plazo_solicitado" name="" type="number" autocomplete="off" placeholder="10 o 30 años" min="10" max="30" required>
                                 </div>
                              </form>
                         </div>
                     </div>
                     <div class="row animatedParent animateOnce" data-sequence="500">
-                        <div class="col-lg-8 col-lg-offset-2 text-center xs-margin-ten-top sm-margin-five-top">
+                        <div class="col-lg-10 col-lg-offset-1 text-center xs-margin-ten-top sm-margin-five-top">
                             <div class="btns text-center">
                                 <a class="btn btn-popsicle" data-text="Quiero comprar" onClick="calcularCuota()" data-style="Button - Popsicle">Quiero comprar</a> 
                                 <a class="btn btn-white" data-text="Borrar datos"  href="#" id="delete-inputs" data-style="Button - Popsicle">Borrar datos</a>
+                            </div>
+                            <div class="row">
+                                <p class="lg-text-extra-small md-text-extra-small sm-text-extra-small xs-text-extra-small">*Importante! La información presentada es actualizada de forma semanal sobre la base de los datos publicados por los bancos en sus <a href="" data-toggle="modal" data-target="#fuentes">sitios web</a>. Las cuotas se calculan sobre Cuentas Sueldos. El valor de las cuotas podría variar en las páginas de los bancos de acuerdo a beneficios adicionales para clientes. El cálculo de cuota no incluye seguro de incencio.</p>
                             </div>
                         </div>
                     </div>
@@ -105,22 +104,28 @@
                 <div id="Pricing" style="position:absolute;top:-100px;visibility:hidden;"></div>
                 <div class="container">
                     <div class="row animatedParent animateOnce" data-sequence="500">
-                        <!--BANCO BBVA-->
+                        <!--BANCO-->
+                        <?php
+                        $i = 0;
+                        ?>
                         @foreach($banks as $bank)
-                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" id="bank-display-{{$bank->id}}" data-id="{{$bank->id}}">
+                        <?php
+                        $i++;
+                        ?>
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" id="bank-display-{{$bank->id}}" data-id="{{$i}}">
                             <table>
                                 <thead>
                                     <tr>
                                         <th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">
-                                            <img class="img-responsive xs-display-inline-block" src="/bancos/{{$bank->imagen}}"/>
+                                            <img class="img-responsive xs-display-inline-block" src="bancos/{{$bank->imagen}}"/>
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td colspan="2" class="">
-                                            <h2 class="xs-title-medium sm-title-medium md-title-medium">@if($bank->max_finance=='') Sin Limite @else {{number_format($bank->max_finance, 0, ',', '.')}} @endif</h2>
-                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Máximo a financiar</p>
+                                            <h2 class="xs-title-medium sm-title-medium md-title-medium" id="monto_financiar_{{$bank->id}}"></h2>
+                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Credito máximo </p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -131,13 +136,19 @@
                                     </tr>
                                     <tr>
                                         <td colspan="2" class="">
+                                            <h2 class="xs-title-medium sm-title-medium md-title-medium" id="time_credit_{{$bank->id}}"></h2>
+                                            <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Años del credito</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="">
                                             <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_{{$bank->id}}"></h2>
                                             <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" class="">
-                                            <a data-value="{{$bank->id}}" data-resul="" id="cuota_hidden_{{$bank->id}}" class="bank-selected btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Asesorate</a>
+                                        <td colspan="2" class="hidden">
+                                            <a data-value="{{$bank->id}}" data-resul="" id="cuota_hidden_{{$bank->id}}" class="bank-selected btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Recibir</a>
                                             <p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>
                                         </td>
                                     </tr>
@@ -145,7 +156,7 @@
                             </table>
                         </div>
                         @endforeach
-                        <!--BANCO BBVA-->
+                        <!--BANCO-->
 
                     </div>
                     <hr/>
@@ -171,12 +182,12 @@
                                 <p class="xs-no-margin-top sm-no-margin-top md-no-margin-top">Básicamente, en que la liquidación de las cuotas depende del valor de las UVAs, que se expresan en pesos al momento del vencimiento.</p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 lg-margin-ten-bottom md-margin-ten-bottom sm-margin-three-bottom xs-margin-ten-bottom">
-                                <h3>¿Hay algún tope en el aumento de la cuota?</h3>
+                                <h3>¿Existe un tope en el aumento de cuota?</h3>
                                 <p class="xs-no-margin-top sm-no-margin-top md-no-margin-top">¡Sí! Cuando la cuota supera un 10% el valor de cuota de un préstamo con ajuste de capital.</p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 lg-margin-ten-bottom md-margin-ten-bottom sm-margin-three-bottom xs-margin-ten-bottom">
                                 <h3>¿Puedo cancelar el préstamo antes?</h3>
-                                <p class="xs-no-margin-top sm-no-margin-top md-no-margin-top">¡Por supuesto! Podés cancelar la operación en cualquier momento.</p>
+                                <p class="xs-no-margin-top sm-no-margin-top md-no-margin-top">¡Por supuesto! El crédito se puede cancelar antes de firmar el acuerdo o, una vez otorgado, una cierta cantidad de cuotas.</p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-12 sm-margin-three-bottom xs-margin-ten-bottom">
                                 <h3>¿El mutuo hipotecario se firma en UVAs?</h3>
@@ -195,6 +206,33 @@
 		<!--FOOTER-->
         @include("footer", ['banks'=>$banks])
 		<!--FOOTER-->
+		
+        <!--MODAL FUENTES-->
+        <div id="fuentes" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body" style="height:250px;">
+                        <div class="col-md-6 col-xs-6">
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="http://www.bna.com.ar/Personas/CreditosUVAinformacion" target="_blank">Banco Nación</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.bancociudad.com.ar/institucional/personas/Prestamos%20Hipotecarios/Hipotecario%20UVA" target="_blank">Banco Ciudad</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.bbvafrances.com.ar/personas/prestamos/prestamos-hipotecarios/#contenido-desplegable-0" target="_blank">BBVA</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="http://www.bancogalicia.com/banca/online/web/Personas/ProductosyServicios/prestamos-hipotecarios-uva/" target="_blank">Banco Galicia</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.hipotecario.com.ar/default.asp?id=336" target="_blank">Banco Hipotecario</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.icbc.com.ar/personas/productos-servicios/prestamos/hipotecarios" target="_blank">Banco ICBC</a></p>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="http://www.itau.com.ar/prestamos/Paginas/prestamos-hipotecarios-uvi.aspx" target="_blank">Banco Itaú</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.bancor.com.ar/718_APP/personas/pr%C3%A9stamos/pr%C3%A9stamos-hipotecarios/casa-bancor/" target="_blank">Banco de Córdoba</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.macro.com.ar/PortalMacro/content/conn/macro/path/Contribution%20Folders/contenido/personas/Pr%C3%A9stamos/BYC-PRESTAMOS-BM.pdf" target="_blank">Banco Macro</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.bancoprovincia.com.ar/tuvivienda/index360.html#/caracteristicas" target="_blank">Banco Provincia</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="https://www.santanderrio.com.ar/banco/online/personas/creditos/super-prestamo-hipotecario-uvas" target="_blank">Banco Santander</a></p>
+                            <p class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><a href="http://www.supervielle.com.ar/Personas/Prestamos/HipotecariosUVAs/" target="_blank">Banco Supervielle</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        <!--MODAL FUENTES-->
 		
         <!--MODAL SOLICITAR CRÉDITO-->
         <div id="SolicitarCredito" class="modal fade" role="dialog">
@@ -222,14 +260,13 @@
                                 <input id="" name="phone" type="number" autocomplete="off" placeholder="Por ejemplo: +54111234567" required>
                             </div>
                             <div class="">
-                                <input id="" name="certificate" type="checkbox" checked autocomplete="off" required>
+                                <input id="" name="certificate" type="checkbox" autocomplete="off">
                                 <small class="xs-no-margin-top xs-text-medium sm-text-medium md-text-medium"><i>Solicitar certificado de vivienda única</i></small>
-
                             </div>
                     </div>
                     <div class="modal-footer">
                         <div class="btns text-center">
-                            <button type="submit" class="btn btn-popsicle" data-text="Quiero comprar" data-style="Button - Popsicle" href="" target="_blank">Contactate con el banco</button>
+                            <button type="submit" class="btn btn-popsicle" data-text="Quiero comprar" data-style="Button - Popsicle" href="" target="_blank">Recibir por correo</button>
                             <a class="btn btn-white" data-dismiss="modal">Cancelar</a>
                         </div>
                     </div>

@@ -9,6 +9,7 @@
        <p> Nombre y Apellido: {{$nombre}} </p>
        <p> E-mail: {{$email}} </p>
        <p> Teléfono: {{$telefono}} </p>
-        
+       <p> Consulta: {{$mensaje}} </p>
+
     </body>
 </html>

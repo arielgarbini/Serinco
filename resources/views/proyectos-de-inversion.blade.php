@@ -3,22 +3,22 @@
     <head>
 		<!--HEAD-->
         @include("head")
-        <title>Serinco | Tasaciones</title>
+        <title>Serinco | Proyectos de Inversión</title>
         <!-- META -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf8">
-        <meta property="og:title" content="Tasaciones Serinco">
+        <meta property="og:title" content="Proyectos de Inversión Serinco">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="http://www.serinco.com.ar/tasaciones">
-        <meta property="og:description" content="Realizamos un promedio anual de 38.000 valuaciones de inmuebles, maquinarias e instalaciones por m¨¢s de US$ 5.700.000.">
+        <meta property="og:url" content="http://www.serinco.com.ar/proyectos-de-inversion">
+        <meta property="og:description" content="Acompañamos a las entidades financieras, desarrollistas y/o constructoras, en el análisis de razonabilidad técnica y económica de sus proyectos de inversión.">
         <meta property="og:site_name" content="Serinco">
-        <meta property="og:image" content="http://www.serinco.com.ar/cf/img/sections/img-tasaciones-002.jpg">
-        <meta property="og:image:secure_url" content="http://www.serinco.com.ar/cf/img/sections/img-tasaciones-002.jpg">
+        <meta property="og:image" content="http://www.serinco.com.ar/cf/img/sections/img-proyectos-002.jpg">
+        <meta property="og:image:secure_url" content="http://www.serinco.com.ar/cf/img/sections/img-proyectos-002.jpg">
         <meta property="og:image:type" content="image/jpg">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@">
-        <meta name="twitter:title" content="Tasaciones Serinco">
-        <meta name="twitter:description" content="Realizamos un promedio anual de 38.000 valuaciones de inmuebles, maquinarias e instalaciones por m¨¢s de US$ 5.700.000.">
-        <meta name="twitter:image" content="http://www.serinco.com.ar/cf/img/sections/img-tasaciones-002.jpg">
+        <meta name="twitter:title" content="Proyectos de Inversión Serinco">
+        <meta name="twitter:description" content="Acompañamos a las entidades financieras, desarrollistas y/o constructoras, en el análisis de razonabilidad técnica y económica de sus proyectos de inversión.">
+        <meta name="twitter:image" content="http://www.serinco.com.ar/cf/img/sections/img-proyectos-002.jpg">
         <meta property="twitter:account_id" content="">    
         <!-- META -->
 		<!--HEAD-->
@@ -63,26 +63,23 @@
                     <div class="content-list">
                         <div class="row">
                             <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-                                <h1 class="lg-title-extra-large-3 xs-title-extra-large-2 lg-margin-three-bottom">Servicio de Tasaciones</h1>
-                                <h4 class="lg-title-medium md-title-small color-grey lg-margin-five-two">Realizamos un promedio anual de 38.000 valuaciones de inmuebles, maquinarias e instalaciones por más de US$ 5.700.000. Todas ellas bajo los más alto estándares de calidad a nivel nacional e internacional.</h4>
+                                <h1 class="lg-title-extra-large-3 xs-title-extra-large-2 lg-margin-three-bottom">Evaluación de proyectos de inversión</h1>
+                                <h4 class="lg-title-medium md-title-small color-grey lg-margin-five-two">Acompañamos a las entidades financieras, desarrollistas y/o constructoras, en el análisis de razonabilidad técnica y económica de sus proyectos de inversión.</h4>
                                 <div class="sharethis-inline-share-buttons lg-margin-five-bottom"></div>
                                 <hr/>
-                                <h3>Control de calidad</h3>
-                                <p>En Serinco, contamos con una red de más de 500 profesionales en todo el país: ingenieros civiles, industriales, arquitectos, agrónomos y profesionales universitarios. Además, todos los informes de valuación y tasación realizados son auditados en casa central por supervisores especializados.</p>
-                                <hr/>
-                                <h3>Estimación de valor</h3>
-                                <p>Ejecutamos las tasaciones sobre la base de la documentación existente del bien inmueble, maquinaria o instalación (descripciones, fotografías, videos, etc.). Este servicio puede utilizarse en tasaciones de Serinco o tasaciones realizadas por otras empresas.</p>
-                                <p>Para el análisis del informe consideramos el valor de mercado y el valor de realización. A la tasación analizada le incorporamos un sello de revaluación, en el cual se describen los valores actualizados, fecha de revaluación y profesional interviniente. Para actualizar el valor, realizamos el análisis de la tasación existente en conjunto con nuestras bases de datos. A continuación, establecemos el nuevo valor, acorde al mercado en la fecha de revaluación.</p>
-                                <hr/>
-                                <h3>Seguimiento</h3>
-                                <p>Contamos con un área especializada en el control y seguimiento de todas las operaciones. De esta forma, garantizamos el acceso a la información y al estado de situación de cada proyecto.</p>
-                                <hr/>
-                                <h3>Auditorías</h3>
-                                <p>En Serinco, también evaluamos tasaciones realizadas por otras empresas. Este servicio puede ser ejectuado a distancia o bien realizando la visita al inmueble, maquinariao instalación.</p>
+                                <h3>Metodología de trabajo</h3>
+                                <ul class="lg-margin-two-top">
+                                    <li><i class="fa fa-check color-blue"></i> Evaluación y razonabilidad del proyecto..</li>
+                                    <li><i class="fa fa-check color-blue"></i> Análisis y control de costos del presupuesto, dictamen de los mismos en relación a los normales de plaza, de acuerdo a la tecnología a utilizar.</li>
+                                    <li><i class="fa fa-check color-blue"></i> Evaluación de razonabilidad del cronograma de desarrollo de la obra.</li>
+                                    <li><i class="fa fa-check color-blue"></i> Evaluación financiera del proyecto.</li>
+                                    <li><i class="fa fa-check color-blue"></i> Determinación de impacto ambiental.</li>
+                                    <li><i class="fa fa-check color-blue"></i> Seguimiento y certificación de porcentuales de avance físico y cumplimiento de requerimientos técnicos.</li>
+                                </ul>
                             </div>
                             <div class="col-lg-4 hidden-md col-hidden-sm hidden-xs animatedParent animateOnce">
                                 <div class="side-illustration animated fadeInRightShort go">
-                                    <img src="img/sections/img-tasaciones-002.jpg" class="img-responsive" style="border-radius:100%;height:120%;"/>
+                                    <img src="img/sections/img-proyectos-002.jpg" class="img-responsive" style="border-radius:100%;height:120%;"/>
                                 </div>
                             </div>
                         </div>

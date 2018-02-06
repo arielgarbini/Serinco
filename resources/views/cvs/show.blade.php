@@ -22,7 +22,7 @@
 						</tr>
 						<tr>
 							<th>Cv:</th>
-							<td>@if($cv->cv) <a download target="_blank" href="/cv/{{$cv->cv}}">{{$cv->cv}}</a> @else - @endif</td>
+							<td>@if($cv->cv) <a download target="_blank" href="{{url('/cv/'.$cv->cv)}}">{{$cv->cv}}</a> @else - @endif</td>
 						</tr>
 					</table>
 

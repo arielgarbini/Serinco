@@ -20,7 +20,7 @@
 					@if (Session::has('message'))
 					<div class="alert alert-info">{{ Session::get('message') }}</div>
 					@endif
-					<form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="/editNew">
+					<form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{url('/editNew')}}">
 
 						<div class="list-group">
 							<div class="list-group-item">

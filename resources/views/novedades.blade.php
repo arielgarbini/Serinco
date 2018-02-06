@@ -1,18 +1,30 @@
 <!doctype html>
 <html class="no-js" lang="es">
 	<head>
-		<!--HEAD-->
+        <!--HEAD-->
         @include("head")
-		<!--HEAD-->
+        <title>Serinco | Novedades</title>
+        <!-- META -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+        <meta property="og:title" content="Novedades Serinco">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://www.serinco.com.ar/novedades">
+        <meta property="og:description" content="Enterate primero que nadie de todo lo que sucede en los 📈 mercados 📊 de Argentina">
+        <meta property="og:site_name" content="Serinco">
+        <meta property="og:image" content="http://www.serinco.com.ar/img/sections/home-opportunities.jpg">
+        <meta property="og:image:secure_url" content="http://www.serinco.com.ar/img/sections/home-opportunities.jpg">
+        <meta property="og:image:type" content="image/jpg">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:title" content="Novedades Serinco">
+        <meta name="twitter:description" content="Enterate primero que nadie de todo lo que sucede en los 📈 mercados 📊 de Argentina">
+        <meta name="twitter:image" content="http://www.serinco.com.ar/img/sections/home-opportunities.jpg">
+        <meta property="twitter:account_id" content="">    
+        <!-- META -->
+        <!--HEAD-->
 	</head>
 	
 	<body>
-		<!--GOOGLE TAG MANAGER-->
-		<script>
-			!function(e,t,a,n,r){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var g=t.getElementsByTagName(a)[0],m=t.createElement(a),s="dataLayer"!=n?"&l="+n:"";m.async=!0,m.src="//www.googletagmanager.com/gtm.js?id="+r+s,g.parentNode.insertBefore(m,g)}(window,document,"script","dataLayer","GTM-P5KGXM")
-		</script>
-		<!--GOOGLE TAG MANAGER-->
-
 		<!--[if lt IE 11]>
 		<p class="browserupgrade">Estás utilizando un navegador <strong>anticuado</strong>. Por favor, <a href="http://browsehappy.com/">actualizalo aquí</a> y mejorá tu experiencia digital.</p>
 		<![endif]-->
@@ -37,8 +49,8 @@
                     </nav>
 				</div>
 				<div id="guest-btns" class="col-lg-4 btns">
-					<a class="btn btn-popsicle pull-right col-xs-12 col-md-7" href="{{url('comparador')}}" data-location="Header" data-text="Créditos Hipotecarios" data-style="Button - Popsicle">Créditos Hipotecarios</a> 
-					<a class="btn btn-white pull-right col-xs-12 col-md-4" href="http://www.serinco.com.ar/ServiciosLogin.aspx" data-text="Accesos">Accesos</a>
+					<a class="btn btn-popsicle pull-right col-xs-12 col-md-7 hidden" href="{{url('comparador')}}" data-location="Header" data-text="Créditos Hipotecarios" data-style="Button - Popsicle">Créditos Hipotecarios</a> 
+					<a class="btn btn-white pull-right col-xs-12 col-md-4" href="http://www.serinco.com.ar/ServiciosLogin.aspx" data-text="Accesos">Login</a>
 				</div>
 			</div>
 		</header>
@@ -63,7 +75,9 @@
 				<div id="Noticias" style="position:absolute;top:-130px;visibility:hidden;"></div>
             	<div class="container">
             		<div class="content-list">
+                        <? $i = 0; ?>
             			@foreach($news as $noticia)
+                        @if($i < 3)
             			<div class="row">
             				<div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
             				    <img src="{{asset('publicaciones/'.$noticia->small_pic)}}"/>
@@ -76,6 +90,8 @@
             			</div>
             			<hr>
                         <? $data[] = $noticia->id; ?>
+                        <? $i++; ?>
+                        @endif
             			@endforeach
             		</div>
             	</div>
@@ -84,13 +100,17 @@
             <section class="hidden-xs">
             	<div class="container">
             		<div class="row animatedParent animateOnce">
+                        <? $i = 0; ?>
             			@foreach($news as $noticia)
+                        @if($i < 4)
                         @if(!in_array($noticia->id, $data))
             			<div class="col-lg-3 col-sm-6 col-xs-12 xs-text-center md-margin-ten-bottom sm-margin-ten-bottom">
             				<img class="hidden-xs img-responsive" src="{{asset('publicaciones/'.$noticia->small_pic)}}"/>
             				<h2 class="lg-title-medium md-title-large sm-title-extra-large-2 xs-title-extra-large-4 lg-margin-ten-top "><a href="{{url('noticia/'.$noticia->id)}}">{{$noticia->title}}</a></h2>
-            				<p class="lg-text-medium">{{$noticia->short_description}}</p>
+            				<p class="lg-text-medium lg-line-height-20 md-line-height-20">{{$noticia->short_description}}</p>
             			</div>
+                        <? $i++; ?>
+                        @endif
                         @endif
             			@endforeach
             		</div>

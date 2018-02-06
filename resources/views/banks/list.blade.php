@@ -37,7 +37,7 @@
 								<td>{{ $bank->percentaje_cuota }}</td>
 								<td>{{ $bank->tasa_anual }}</td>
 								<td>@if($bank->is_active==1) Activo @else Deshabilitado @endif</td>
-								<td><a href= "/banks/{{$bank->id}}/edit" class="btn btn-info" >Editar</a>&nbsp;&nbsp;<a href= "banks/{{$bank->id}}/delete" onClick="return confirm('¿Esta seguro?');" class="btn btn-danger" >Deshabilitar</a> @if($bank->is_active!=1 && Auth::user()->roles_id==1)&nbsp;&nbsp;<a href= "banks/{{$bank->id}}/approve" onClick="return confirm('¿Esta seguro?');" class="btn btn-warning" >Activar</a> @endif</td>
+								<td><a href= "{{url('/banks/'.$bank->id)}}/edit" class="btn btn-info" >Editar</a>&nbsp;&nbsp;<a href= "{{url('banks/'.$bank->id)}}/delete" onClick="return confirm('¿Esta seguro?');" class="btn btn-danger" >Deshabilitar</a> @if($bank->is_active!=1 && Auth::user()->roles_id==1)&nbsp;&nbsp;<a href= "banks/{{$bank->id}}/approve" onClick="return confirm('¿Esta seguro?');" class="btn btn-warning" >Activar</a> @endif</td>
 							</tr>
 							@endforeach
 						</tbody>

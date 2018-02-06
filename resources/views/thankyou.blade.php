@@ -3,16 +3,28 @@
     <head>
 		<!--HEAD-->
         @include("head")
+        <title>Serinco | El Valor Cierto</title>
+        <!-- META -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+        <meta property="og:title" content="El Valor Cierto">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://www.serinco.com.ar/">
+        <meta property="og:description" content="En Serinco, ayudamos a personas y empresas a simplificar su gestión y responder a los requerimientos de los diversos mercados de Argentina.">
+        <meta property="og:site_name" content="Serinco">
+        <meta property="og:image" content="http://www.serinco.com.ar/img/sections/bg-home.jpg">
+        <meta property="og:image:secure_url" content="http://www.serinco.com.ar/img/sections/bg-home.jpg">
+        <meta property="og:image:type" content="image/jpg">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:title" content="El Valor Cierto">
+        <meta name="twitter:description" content="En Serinco, ayudamos a personas y empresas a simplificar su gestión y responder a los requerimientos de los diversos mercados de Argentina.">
+        <meta name="twitter:image" content="http://www.serinco.com.ar/img/sections/bg-home.jpg">
+        <meta property="twitter:account_id" content="">    
+        <!-- META -->
 		<!--HEAD-->
     </head>
     
     <body>
-        <!--GOOGLE TAG MANAGER-->
-        <script>
-            !function(e,t,a,n,r){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var g=t.getElementsByTagName(a)[0],m=t.createElement(a),s="dataLayer"!=n?"&l="+n:"";m.async=!0,m.src="//www.googletagmanager.com/gtm.js?id="+r+s,g.parentNode.insertBefore(m,g)}(window,document,"script","dataLayer","GTM-P5KGXM")
-        </script>
-        <!--GOOGLE TAG MANAGER-->
-
         <!--[if lt IE 11]>
         <p class="browserupgrade">Estás utilizando un navegador <strong>anticuado</strong>. Por favor, <a href="http://browsehappy.com/">actualizalo aquí</a> y mejorá tu experiencia digital.</p>
         <![endif]-->
@@ -28,7 +40,7 @@
                     <div class="row">
                         <div class="col-lg-10 col-lg-offset-1 text-center lg-margin-five-bottom ">
                             <h1>Muchas gracias por elegirnos</h1>
-                            <p>Uno de nuestros asesores se pondrá en contacto con vos de 9 a 18 horas.</p>
+                            <p>Cualquier inquietud, contactate con nosotros de lunes a viernes de 9 a 18 horas.</p>
                         </div>
                     </div>
                     <div class="content-list text-center">

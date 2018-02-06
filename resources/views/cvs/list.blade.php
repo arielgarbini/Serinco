@@ -34,7 +34,7 @@
 								<td>{{ $cv->email }}</td>
 								<td>{{ $cv->phone }}</td>
 								<td>{{ $cv->created_at->format('d/m/Y') }}</td>
-								<td><a href= "/cvs/{{$cv->id}}" class="btn btn-info" >Ver</a>&nbsp;&nbsp;<a href= "cvs/{{$cv->id}}/delete" onClick="return confirm('¿Esta seguro?');" class="btn btn-danger" >Eliminar</a> </td>
+								<td><a href= "{{url('/cvs/'.$cv->id)}}" class="btn btn-info" >Ver</a>&nbsp;&nbsp;<a href= "{{url('cvs/'.$cv->id.'/delete')}}" onClick="return confirm('¿Esta seguro?');" class="btn btn-danger" >Eliminar</a> </td>
 							</tr>
 							@endforeach
 						</tbody>

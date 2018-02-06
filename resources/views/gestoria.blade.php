@@ -3,22 +3,22 @@
     <head>
 		<!--HEAD-->
         @include("head")
-        <title>Serinco | Tasaciones</title>
+        <title>Serinco | Gestoría</title>
         <!-- META -->
         <meta http-equiv="Content-Type" content="text/html; charset=utf8">
-        <meta property="og:title" content="Tasaciones Serinco">
+        <meta property="og:title" content="Gestoría Serinco">
         <meta property="og:type" content="website">
-        <meta property="og:url" content="http://www.serinco.com.ar/tasaciones">
-        <meta property="og:description" content="Realizamos un promedio anual de 38.000 valuaciones de inmuebles, maquinarias e instalaciones por m¨¢s de US$ 5.700.000.">
+        <meta property="og:url" content="http://www.serinco.com.ar/gestoria">
+        <meta property="og:description" content="Realizamos la búsqueda y verificación patrimonial en los registros de la propiedad de todas las provincias de Argentina: inmuebles, automotores, buques y aeronaves.">
         <meta property="og:site_name" content="Serinco">
-        <meta property="og:image" content="http://www.serinco.com.ar/cf/img/sections/img-tasaciones-002.jpg">
-        <meta property="og:image:secure_url" content="http://www.serinco.com.ar/cf/img/sections/img-tasaciones-002.jpg">
+        <meta property="og:image" content="http://www.serinco.com.ar/cf/img/sections/img-gestoria-002.jpg">
+        <meta property="og:image:secure_url" content="http://www.serinco.com.ar/cf/img/sections/img-gestoria-002.jpg">
         <meta property="og:image:type" content="image/jpg">
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@">
-        <meta name="twitter:title" content="Tasaciones Serinco">
-        <meta name="twitter:description" content="Realizamos un promedio anual de 38.000 valuaciones de inmuebles, maquinarias e instalaciones por m¨¢s de US$ 5.700.000.">
-        <meta name="twitter:image" content="http://www.serinco.com.ar/cf/img/sections/img-tasaciones-002.jpg">
+        <meta name="twitter:title" content="Gestoría Serinco">
+        <meta name="twitter:description" content="Realizamos la búsqueda y verificación patrimonial en los registros de la propiedad de todas las provincias de Argentina: inmuebles, automotores, buques y aeronaves.">
+        <meta name="twitter:image" content="http://www.serinco.com.ar/cf/img/sections/img-gestoria-002.jpg">
         <meta property="twitter:account_id" content="">    
         <!-- META -->
 		<!--HEAD-->
@@ -63,26 +63,27 @@
                     <div class="content-list">
                         <div class="row">
                             <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-                                <h1 class="lg-title-extra-large-3 xs-title-extra-large-2 lg-margin-three-bottom">Servicio de Tasaciones</h1>
-                                <h4 class="lg-title-medium md-title-small color-grey lg-margin-five-two">Realizamos un promedio anual de 38.000 valuaciones de inmuebles, maquinarias e instalaciones por más de US$ 5.700.000. Todas ellas bajo los más alto estándares de calidad a nivel nacional e internacional.</h4>
+                                <h1 class="lg-title-extra-large-3 xs-title-extra-large-2 lg-margin-three-bottom">Servicios de Gestoría</h1>
+                                <h4 class="lg-title-medium md-title-small color-grey lg-margin-five-two">Realizamos la búsqueda y verificación patrimonial en los registros de la propiedad de todas las provincias de Argentina: inmuebles, automotores, buques y aeronaves.</h4>
                                 <div class="sharethis-inline-share-buttons lg-margin-five-bottom"></div>
                                 <hr/>
-                                <h3>Control de calidad</h3>
-                                <p>En Serinco, contamos con una red de más de 500 profesionales en todo el país: ingenieros civiles, industriales, arquitectos, agrónomos y profesionales universitarios. Además, todos los informes de valuación y tasación realizados son auditados en casa central por supervisores especializados.</p>
+                                <h3>PROCREAR</h3>
+                                <p>Uno de los requisitos para acceder al crédito hipotecario PROCREAR Solución Casa Propia (y a algunas otras líneas de créditos hipotecarios) es no tener la titularidad de dominio sobre ningún tipo de propiedad inmueble, en ningún porcentaje.</p> 
+                                <p>Cuando los beneficiarios de estos créditos se acercan a cualquiera de los Bancos participantes, se les pide que presenten los informes de titularidad correspondientes para probar la condición de “no propietario”.</p>
+                                <p>Por eso, en Serinco habilitamos un servicio ágil para gestionar los informes de titularidad en todos los registros de la propiedad inmueble del país en tiempo record.</p>
                                 <hr/>
-                                <h3>Estimación de valor</h3>
-                                <p>Ejecutamos las tasaciones sobre la base de la documentación existente del bien inmueble, maquinaria o instalación (descripciones, fotografías, videos, etc.). Este servicio puede utilizarse en tasaciones de Serinco o tasaciones realizadas por otras empresas.</p>
-                                <p>Para el análisis del informe consideramos el valor de mercado y el valor de realización. A la tasación analizada le incorporamos un sello de revaluación, en el cual se describen los valores actualizados, fecha de revaluación y profesional interviniente. Para actualizar el valor, realizamos el análisis de la tasación existente en conjunto con nuestras bases de datos. A continuación, establecemos el nuevo valor, acorde al mercado en la fecha de revaluación.</p>
+                                <h3>Búsqueda patrimonial</h3>
+                                <p>Realizamos la búsqueda en los registros de la propiedad y en nuestra base de datos para cotejar la información histórica de la situación al momento de su verificación ante el Registro de la Propiedad.</p> 
                                 <hr/>
-                                <h3>Seguimiento</h3>
-                                <p>Contamos con un área especializada en el control y seguimiento de todas las operaciones. De esta forma, garantizamos el acceso a la información y al estado de situación de cada proyecto.</p>
+                                <h3>Informe de dominio</h3>
+                                <p>Generamos un reporte que determina quién es el titular del bien, si posee algún tipo de gravámen y/o restricción, y cuántas veces se verificó este aval a través de nosotros.</p> 
                                 <hr/>
-                                <h3>Auditorías</h3>
-                                <p>En Serinco, también evaluamos tasaciones realizadas por otras empresas. Este servicio puede ser ejectuado a distancia o bien realizando la visita al inmueble, maquinariao instalación.</p>
+                                <h3>Informe de inhibición</h3>
+                                <p>Emitimos un informe del registro de la propiedad que te permite conocer al día de la fecha, si una persona física o jurídica podrá disponer libremente de sus bienes para venderlos o gravarlos.</p> 
                             </div>
                             <div class="col-lg-4 hidden-md col-hidden-sm hidden-xs animatedParent animateOnce">
                                 <div class="side-illustration animated fadeInRightShort go">
-                                    <img src="img/sections/img-tasaciones-002.jpg" class="img-responsive" style="border-radius:100%;height:120%;"/>
+                                    <img src="img/sections/img-gestoria-002.jpg" class="img-responsive" style="border-radius:100%;height:120%;"/>
                                 </div>
                             </div>
                         </div>

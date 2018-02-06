@@ -6,7 +6,7 @@
         <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading">Usuarios
-                    <a href= "/adduser"  style="margin-top:-7px; float:right;" class="btn btn-success" >Nuevo Usuario</a>
+                    <a href= "{{url('/adduser')}}"  style="margin-top:-7px; float:right;" class="btn btn-success" >Nuevo Usuario</a>
                 </div>
 
                 <div class="panel-body">

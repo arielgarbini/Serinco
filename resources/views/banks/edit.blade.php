@@ -20,7 +20,7 @@
 					@if (Session::has('message'))
 					<div class="alert alert-info">{{ Session::get('message') }}</div>
 					@endif
-					<form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="/banks/{{$bank->id}}/update">
+					<form class="form-horizontal" role="form" method="POST" enctype="multipart/form-data" action="{{url('/banks/'.$bank->id.'/update')}}">
 
 						<div class="list-group">
 							<div class="list-group-item">
@@ -36,30 +36,30 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-4 control-label">Maximo a financear</label>
+									<label class="col-md-4 control-label">Maximo a financiar</label>
 									<div class="col-md-6">
 										<input type="text" class="form-control" name="max_finance" value="{{ $bank->max_finance }}" required>
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-4 control-label">Porcentaje de la cuota</label>
+									<label class="col-md-4 control-label">Porcentaje máximo del valor de la propiedad</label>
 									<div class="col-md-6">
-										<input type="text" class="form-control" name="percentaje_cuota" value="{{ $bank->percentaje_cuota }}" required>
+										<input type="text" class="form-control" name="percentaje_max" value="{{ $bank->percentaje_max }}" required>
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-4 control-label">Tiempo</label>
+									<label class="col-md-4 control-label">Plazo máximo de pago</label>
 									<div class="col-md-6">
-										<input type="text" class="form-control" name="time" value="{{ $bank->time }}" required>
+										<input type="text" class="form-control" name="plazo_max" value="{{ $bank->plazo_max }}" required>
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label class="col-md-4 control-label">Porcentaje a financear</label>
+									<label class="col-md-4 control-label">Relación máxima cuota / ingreso</label>
 									<div class="col-md-6">
-										<input type="text" class="form-control" name="finance" value="{{ $bank->finance }}" required>
+										<input type="text" class="form-control" name="rci" value="{{ $bank->rci }}" required>
 									</div>
 								</div>
 
@@ -67,6 +67,20 @@
 									<label class="col-md-4 control-label">Tasa anual</label>
 									<div class="col-md-6">
 										<input type="text" class="form-control" name="tasa_anual" value="{{ $bank->tasa_anual }}" required>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Edad minima</label>
+									<div class="col-md-6">
+										<input type="text" class="form-control" name="age_min" value="{{ $bank->age_min }}" required>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-md-4 control-label">Edad maxima</label>
+									<div class="col-md-6">
+										<input type="text" class="form-control" name="age_max" value="{{ $bank->age_max }}" required>
 									</div>
 								</div>
 

@@ -42,9 +42,9 @@ class BanksController extends Controller
         $rules = array(
             'name' => 'required|max:100',
             'imagen' => 'required',
-            'percentaje_cuota' => 'required',
-            'time' => 'required',
-            'finance' => 'required',
+            'percentaje_max' => 'required',
+            'plazo_max' => 'required',
+            'rci' => 'required',
             'tasa_anual' => 'required',
         );
 
@@ -65,10 +65,12 @@ class BanksController extends Controller
 
             $bank->name = Input::get('name');
             $bank->max_finance = Input::get('max_finance','');
-            $bank->percentaje_cuota = Input::get('percentaje_cuota');
-            $bank->time = Input::get('time');
-            $bank->finance = Input::get('finance');
+            $bank->percentaje_max = Input::get('percentaje_max');
+            $bank->plazo_max = Input::get('plazo_max');
+            $bank->rci = Input::get('rci');
             $bank->tasa_anual = Input::get('tasa_anual');
+            $bank->age_min = Input::get('age_min',18);
+            $bank->age_max = Input::get('age_max',65);
 
             if(Auth::user()->roles_id==1){
                 $bank->is_active = 1;
@@ -97,9 +99,9 @@ class BanksController extends Controller
     {
         $rules = array(
             'name' => 'required|max:100',
-            'percentaje_cuota' => 'required',
-            'time' => 'required',
-            'finance' => 'required',
+            'percentaje_max' => 'required',
+            'plazo_max' => 'required',
+            'rci' => 'required',
             'tasa_anual' => 'required',
         );
 
@@ -123,10 +125,12 @@ class BanksController extends Controller
 
             $bank->name = Input::get('name');
             $bank->max_finance = Input::get('max_finance','');
-            $bank->percentaje_cuota = Input::get('percentaje_cuota');
-            $bank->time = Input::get('time');
-            $bank->finance = Input::get('finance');
+            $bank->percentaje_max = Input::get('percentaje_max');
+            $bank->plazo_max = Input::get('plazo_max');
+            $bank->rci = Input::get('rci');
             $bank->tasa_anual = Input::get('tasa_anual');
+            $bank->age_min = Input::get('age_min',18);
+            $bank->age_max = Input::get('age_max',65);
 
             if(Auth::user()->roles_id==1){
                 $bank->is_active = 1;

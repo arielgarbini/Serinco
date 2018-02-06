@@ -3,16 +3,28 @@
     <head>
 		<!--HEAD-->
         @include("head")
+        <title>Serinco | El Valor Cierto</title>
+        <!-- META -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+        <meta property="og:title" content="Soluciones Serinco">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="http://www.serinco.com.ar/soluciones">
+        <meta property="og:description" content="Brindamos soluciones que simplifican la gestión de nuestros clientes y que responden a los requerimientos del mercado local.">
+        <meta property="og:site_name" content="Serinco">
+        <meta property="og:image" content="http://www.serinco.com.ar/img/sections/bg-soluciones.jpg">
+        <meta property="og:image:secure_url" content="http://www.serinco.com.ar/img/sections/bg-soluciones.jpg">
+        <meta property="og:image:type" content="image/jpg">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@">
+        <meta name="twitter:title" content="Soluciones Serinco">
+        <meta name="twitter:description" content="Brindamos soluciones que simplifican la gestión de nuestros clientes y que responden a los requerimientos del mercado local.">
+        <meta name="twitter:image" content="http://www.serinco.com.ar/img/sections/bg-soluciones.jpg">
+        <meta property="twitter:account_id" content="">    
+        <!-- META -->
 		<!--HEAD-->
     </head>
     
     <body>
-        <!--GOOGLE TAG MANAGER-->
-        <script>
-            !function(e,t,a,n,r){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var g=t.getElementsByTagName(a)[0],m=t.createElement(a),s="dataLayer"!=n?"&l="+n:"";m.async=!0,m.src="//www.googletagmanager.com/gtm.js?id="+r+s,g.parentNode.insertBefore(m,g)}(window,document,"script","dataLayer","GTM-P5KGXM")
-        </script>
-        <!--GOOGLE TAG MANAGER-->
-
         <!--[if lt IE 11]>
         <p class="browserupgrade">Estás utilizando un navegador <strong>anticuado</strong>. Por favor, <a href="http://browsehappy.com/">actualizalo aquí</a> y mejorá tu experiencia digital.</p>
         <![endif]-->
@@ -30,16 +42,40 @@
                     <div class="row animatedParent">
                         <div class="col-lg-12 animated fadeInLeftShort go xs-text-center sm-text-center text-white">
                             <h1 class="text-white">Ayudamos a las personas y empresas en los mercados de Argentina</h1>
-                            <p class="text-white">Brindamos soluciones que <a class="text-yellow">simplifican la gestión</a> de nuestros clientes y que responden a los requerimientos del mercado local.</p>
-                            <div class="btns">
-                                <a class="btn btn-white" data-location="Home - hero" data-text="Tasaciones" data-style="Button - Popsicle" href="#Tasaciones">Tasaciones</a>
-                                <a class="btn btn-white" data-location="Home - hero" data-text="Servicios de Gestoría" data-style="Button - Popsicle" href="#Gestoria">Gestoría</a>
-                                <a class="btn btn-white" data-location="Home - hero" data-text="Proyectos de inversión" data-style="Button - Popsicle" href="#Proyectos">Evaluaciones</a>
-                                <a class="btn btn-white" data-location="Home - hero" data-text="Inspección para compañías de seguros" data-style="Button - Popsicle" href="#Inspecciones">Inspecciones</a>
-                            </div>
+                            <p class="text-white texto-variable">Brindamos soluciones que <a class="text-yellow">simplifican la gestión</a> de nuestros clientes y que responden a los requerimientos del mercado local.</p>
                         </div>
                     </div>
                 </div>
+            </section>
+            <section id="top-dsps" class="dsps">
+                <div class="container">
+                    <div class="row animatedParent animateOnce">
+                        <div class="col-lg-9 animated fadeInLeftShort go">
+                            <div class="col-lg-2 col-xs-3">
+                                <a><img class="img-responsive logos-home" src="img/bancos/logo-nacion.png"></a>
+                            </div>
+                            <div class="col-lg-2 col-xs-3">
+                                <a><img class="img-responsive logos-home" src="img/bancos/logo-macro.png"></a>
+                            </div>
+                            <div class="col-lg-2 col-xs-3">
+                                <a><img class="img-responsive logos-home" src="img/bancos/logo-hipotecario.png"></a>
+                            </div>
+                            <div class="col-lg-2 col-xs-3">
+                                <a><img class="img-responsive logos-home" src="img/bancos/logo-galicia.png"></a>
+                            </div>
+                            <div class="col-lg-2 col-xs-3">
+                                <a><img class="img-responsive logos-home" src="img/bancos/logo-supervielle.png"></a>
+                            </div>
+                            <div class="col-lg-2 col-xs-3">
+                                <a><img class="img-responsive logos-home" src="img/bancos/logo-ciudad.png"></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 animated fadeInLeftShort go">
+                            <a class="inpage" href="{{url('nosotros')}}#Clientes">...y muchos más ›</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>    
             </section>
             <section>
                 <div id="Tasaciones" style="position:absolute;top:-130px;visibility:hidden;"></div>
@@ -91,7 +127,7 @@
                             <p>Acompañamos a las entidades financieras, desarrollistas y/o constructoras, en el análisis de razonabilidad técnica y económica de sus proyectos de inversión.</p>
                             <div class="btns">
                                 <a id="" class="btn btn-popsicle mpStartsSignup" href="" data-location="Soluciones" data-text="Asesorate con uno de nuestros expertos" data-style="Button - Popsicle" data-toggle="modal" data-target="#Contacto">Asesorate con nuestros expertos</a>
-                                <a id="" class="btn btn-white" href="{{url('inversiones')}}" data-location="Soluciones" data-text="Más información" data-style="Button - Popsicle">Más información</a>
+                                <a id="" class="btn btn-white" href="{{url('proyectos-de-inversion')}}" data-location="Soluciones" data-text="Más información" data-style="Button - Popsicle">Más información</a>
                             </div>
                         </div>
                     </div>
@@ -116,8 +152,8 @@
                     </div>
                 </div>
             </section>
-            <hr class="hidden-xs">
-            <section class="hidden-xs">
+            <hr class="hidden-xs hidden">
+            <section class="hidden-xs hidden">
                 <div class="container">
                     <div class="row animatedParent animateOnce " data-sequence="500">
                         <div class="col-lg-12 text-center xs-text-center sm-text-center xs-margin-ten-top sm-margin-five-top">
@@ -128,35 +164,34 @@
                                         <div class="col-lg-12 animatedParent animateOnce">
                                             <blockquote>
                                                 <div class="pic">
-                                                    <img src="https://www.recordunion.com/img/artists/cleo.jpg" alt="Cleo" title="Cleo" class="animated fadeIn go">
-                                                    <small>Photo: Isabel Minou</small>
+                                                    <img src="http://serinco.coffeetalk.com.ar/img/bancos/logo-nacion.png" alt="Cleo" title="Cleo" class="animated fadeIn go">
+                                                    <small class="hidden">Banco Nación</small>
                                                 </div>
                                                 <div class="text">
-                                                    <p>“Since I started with music I’ve been independent, and I wish I’ll always be – it gives me confidence and control over my career. Record Union is an important reason that I can still do this on my own, without the backup from a major label.”</p>
-                                                    <h3>Cleo</h3>
-                                                    <span>Artist</span>
+                                                    <p>“SinceSerinco ofrece servicios que han logrado impulsar la gestión del banco y acompañarnos en nuestro crecimiento.”</p>
+                                                    <h3>Ramón Vallejo</h3>
+                                                    <span>Gerente</span>
                                                 </div>
                                             </blockquote>
                                             <hr>
                                             <blockquote>
                                                 <div class="text">
-                                                    <p>“Thanks to Record Union I'm able to reach more listeners, which in turn allows for more opportunity.”</p>
-                                                    <h3>WebsterX</h3>
-                                                    <span>Artist</span>
+                                                    <p>“Serinco ofrece servicios que han logrado impulsar la gestión del banco y acompañarnos en nuestro crecimiento.”</p>
+                                                    <h3>Pedro Ballester</h3>
+                                                    <span>Gerente</span>
                                                 </div>
                                                 <div class="pic">
-                                                    <img src="https://www.recordunion.com/img/artists/cleo.jpg" alt="WebsterX" title="WebsterX" class="animated fadeIn go">
+                                                    <img src="http://serinco.coffeetalk.com.ar/img/bancos/logo-hipotecario.png" alt="WebsterX" title="WebsterX" class="animated fadeIn go">
                                                 </div></blockquote>
                                             <hr>
                                             <blockquote>
                                                 <div class="pic">
-                                                    <img src="https://www.recordunion.com/img/artists/cleo.jpg" alt="Hana Oceans" title="Hana Oceans" class="animated fadeIn go"> 
-                                                    <small>Photo: Hilma Lundwall</small>
+                                                    <img src="http://serinco.coffeetalk.com.ar/img/bancos/logo-macro.png" alt="Hana Oceans" title="Hana Oceans" class="animated fadeIn go"> 
                                                 </div>
                                                 <div class="text">
-                                                    <p>“Record Union is a team of true enthusiasts who work hard for their artists’ music.”</p>
-                                                    <h3>Hana Oceans</h3>
-                                                    <span>Spotify Spotlight artist</span>
+                                                    <p>“Serinco ofrece servicios que han logrado impulsar la gestión del banco y acompañarnos en nuestro crecimiento.”</p>
+                                                    <h3>Maricel Pérez</h3>
+                                                    <span>Gerente</span>
                                                 </div>
                                             </blockquote>
                                         </div>

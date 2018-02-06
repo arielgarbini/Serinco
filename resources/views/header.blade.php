@@ -17,8 +17,8 @@
                     </nav>
 				</div>
 				<div id="guest-btns" class="col-lg-4 btns">
-					<a class="btn btn-popsicle pull-right col-xs-12 col-md-7" href="{{url('comparador')}}" data-location="Header" data-text="Créditos Hipotecarios" data-style="Button - Popsicle">Créditos Hipotecarios</a> 
-					<a class="btn btn-white pull-right col-xs-12 col-md-4" href="http://www.serinco.com.ar/ServiciosLogin.aspx" data-text="Accesos">Accesos</a>
+					<a class="btn btn-popsicle pull-right col-xs-12 col-md-7 hidden" href="{{url('comparador')}}" data-location="Header" data-text="Créditos Hipotecarios" data-style="Button - Popsicle">Créditos Hipotecarios</a> 
+					<a class="btn btn-white pull-right col-xs-12 col-md-4" href="http://www.serinco.com.ar/ServiciosLogin.aspx" target="_blank" data-text="Accesos">Login</a>
 				</div>
 			</div>
 		</header>

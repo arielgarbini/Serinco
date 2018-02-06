@@ -14,6 +14,7 @@ class Bank extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'imagen', 'max_finance', 'percentaje_cuota', 'time', 'finance', 'tasa_anual', 'is_active'
+        'name', 'imagen', 'max_finance', 'percentaje_cuota',
+        'time', 'finance', 'tasa_anual', 'is_active','age_min','age_max'
     ];
 }

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-	$news = \App\News::where('is_approved','=','1')->where('is_active','=','1')->orderBy('created_at','DESC')->get();
+    $news = \App\News::where('is_approved','=','1')->where('is_active','=','1')->orderBy('created_at','DESC')->get();
     return view('welcome')->with('news',$news);
 });
 
@@ -35,7 +35,7 @@ Route::get('/gracias', function () {
 
 Route::post('contacto',function(){
    
-	if(Request::ajax()){
+    if(Request::ajax()){
         \App\Contact::create(['name' => Request::get('name'), 'phone' => Request::get('tel'),
             'email' => Request::get('email'), 'type' => 'contacto',
             'messages' => Request::get('msj')]);
@@ -48,19 +48,32 @@ Route::get('/soluciones', function () {
     return view('soluciones');
 });
 
+Route::get('/proyectos-de-inversion', function () {
+    return view('proyectos-de-inversion');
+});
+Route::get('/inspecciones', function () {
+    return view('inspecciones');
+});
+Route::get('/tasaciones', function () {
+    return view('tasaciones');
+});
+Route::get('/gestoria', function () {
+    return view('gestoria');
+});
+
 Route::get('/novedades', function () {
-	$news = \App\News::where('is_approved','=','1')->where('is_active','=','1')->get();
-	return view('novedades')->with('news',$news)->with('data', []);
+    $news = \App\News::where('is_approved','=','1')->where('is_active','=','1')->get();
+    return view('novedades')->with('news',$news)->with('data', []);
 });
 
 Route::get('noticia/{id}', function ($id = null){
-		$new = \App\News::find($id);
-		if($new!=null){
-					return view('noticia')->with('noticia',$new);
-				}else{
-					$news = \App\News::where('is_approved','=','1')->where('is_active','=','1')->orderBy('created_at','DESC')->get();
-    				return view('welcome')->with('news',$news);
-			}
+        $new = \App\News::find($id);
+        if($new!=null){
+                    return view('noticia')->with('noticia',$new);
+                }else{
+                    $news = \App\News::where('is_approved','=','1')->where('is_active','=','1')->orderBy('created_at','DESC')->get();
+                    return view('welcome')->with('news',$news);
+            }
 });
 
 Auth::routes();
