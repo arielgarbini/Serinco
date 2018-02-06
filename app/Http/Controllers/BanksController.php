@@ -23,7 +23,8 @@ class BanksController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth')->only('index','create','show',
+            'edit','update','store','delete');
     }
 
     public function index()
