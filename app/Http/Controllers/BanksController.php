@@ -72,6 +72,7 @@ class BanksController extends Controller
             $bank->tasa_anual = Input::get('tasa_anual');
             $bank->age_min = Input::get('age_min',18);
             $bank->age_max = Input::get('age_max',65);
+            $bank->show_more = Input::get('show_more','');
 
             if(Auth::user()->roles_id==1){
                 $bank->is_active = 1;
@@ -132,6 +133,7 @@ class BanksController extends Controller
             $bank->tasa_anual = Input::get('tasa_anual');
             $bank->age_min = Input::get('age_min',18);
             $bank->age_max = Input::get('age_max',65);
+            $bank->show_more = Input::get('show_more','');
 
             if(Auth::user()->roles_id==1){
                 $bank->is_active = 1;

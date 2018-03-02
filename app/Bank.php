@@ -15,6 +15,6 @@ class Bank extends Model
      */
     protected $fillable = [
         'name', 'imagen', 'max_finance', 'percentaje_cuota',
-        'time', 'finance', 'tasa_anual', 'is_active','age_min','age_max'
+        'time', 'finance', 'tasa_anual', 'is_active','age_min','age_max', 'show_more'
     ];
 }

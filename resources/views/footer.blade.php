@@ -195,12 +195,27 @@
         var ingreso_mensual = $("#ingreso_mensual").val();
         var edad = $("#edad").val();
         var plazo_solicitado = $("#plazo_solicitado").val();
+        var resultsArray = [];
         @if(isset($banks))
         @foreach($banks as $bank)
             if(parseInt("{{$bank->plazo_max}}") >=parseInt(plazo_solicitado)) {
                 var age_min = parseInt("{{$bank->age_min}}");
                 var age_max = parseInt("{{$bank->age_max}}");
                 if(edad>age_min && edad<age_max){
+                    var dataArray = {'html': '<div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 animated bounceInDown bancos" id="bank-display-{{$bank->id}}" data-id="{i}"> <table>'};
+                    dataArray['html'] += '<thead><tr><th colspan="2" class="xs-text-center xs-padding-twenty-five sm-padding-twenty-five md-padding-twenty-five">';
+                    dataArray['html'] += '<img class="img-responsive xs-display-inline-block" src="bancos/{{$bank->imagen}}"/> </th> </tr> </thead> <tbody> <tr> <td colspan="2" class="">';
+                    dataArray['html'] += '<h2 class="xs-title-medium sm-title-medium md-title-medium" id="monto_financiar_{{$bank->id}}">{monto_financiar}</h2>';
+                    dataArray['html'] += '<p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Credito máximo </p></td> </tr> <tr><td colspan="2" class="">';
+                    dataArray['html'] += '<h2 class="xs-title-medium sm-title-medium md-title-medium">{{number_format($bank->tasa_anual, 2, ',', '.')}}%</h2>';
+                    dataArray['html'] += '<p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Tasa anual</p></td></tr> <tr>';
+                    dataArray['html'] += '<td colspan="2" class=""> <h2 class="xs-title-medium sm-title-medium md-title-medium" id="time_credit_{{$bank->id}}">{time_credit}</h2>';
+                    dataArray['html'] += '<p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Años del crédito</p>';
+                    dataArray['html'] += '</td> </tr> <tr> <td colspan="2" class=""> <h2 class="xs-title-extra-large-4 sm-title-extra-large-3 md-title-extra-large-3 lg-title-extra-large-4" id="cuota_{{$bank->id}}">{cuota_show}</h2> <p class="xs-text-small xs-no-margin-top sm-text-small md-text-small">Primera cuota</p> </td>';
+                    dataArray['html'] += '</tr> <tr> <td colspan="2" class="hidden"> <a data-value="{{$bank->id}}" data-resul="{cuota_hidden}" id="cuota_hidden_{{$bank->id}}" class="bank-selected btn btn-popsicle mpStartsSignup" data-location="Home - hero" data-text="Aplicar" data-style="Button - Popsicle" href="" data-toggle="modal" data-target="#SolicitarCredito">Ver más</a>';
+                    dataArray['html'] += '<p class="xs-no-margin-top xs-text-extra-small sm-text-extra-small md-text-extra-small lg-text-extra-small">* Para este crédito se requiere <a href="" data-toggle="modal" data-target="#SolicitarCertificado">certificado de titularidad</a>.</p>';
+                    dataArray['html'] += '</td> </tr> </tbody> </table> </div>';
+                    dataArray['id'] = "{{$bank->id}}";
                     var rci = parseFloat("{{$bank->rci}}");
                     var plazo_max = parseInt("{{$bank->plazo_max}}");
                     var max_finance = parseInt("{{$bank->max_finance}}");
@@ -219,20 +234,40 @@
                     }
                     var cuota = (1-Math.pow((1+tasa_real/12),-(plazo_prestamo*12)))/(tasa_real/12);
                     cuota = monto_cuota_max / cuota;
+                    dataArray['cuota'] = cuota;
                     console.log('{{$bank->name}} : '+cuota);
                     monto_cuota_max_string = monto_cuota_max.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1.');
                     var result = cuota.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1.');
-                    $('#cuota_{{$bank->id}}').html('$' + result.toString().substr(0,result.length-3));
+                    dataArray['cuota_show'] = '$' + result.toString().substr(0,result.length-3);
+                    dataArray['monto_financiar'] = '$' + monto_cuota_max_string.toString().substr(0,monto_cuota_max_string.length-3);
+                    dataArray['time_credit'] = plazo_prestamo+' años';
+                    resultsArray.push(dataArray);
+                    /*$('#cuota_{{$bank->id}}').html('$' + result.toString().substr(0,result.length-3));
                     $('#cuota_hidden_{{$bank->id}}').attr('data-resul', '$' + result.toString().substr(0,result.length-3));
                     $('#monto_financiar_{{$bank->id}}').html('$ '+ monto_cuota_max_string.toString().substr(0,monto_cuota_max_string.length-3));
                     $('#time_credit_{{$bank->id}}').html(plazo_prestamo+' años');
-                    $("#bank-display-{{$bank->id}}").show();
+                    $("#bank-display-{{$bank->id}}").show();*/
                 }
             } else {
                 $("#bank-display-{{$bank->id}}").hide();
             }
         @endforeach
         @endif
+
+        var html = '';
+        resultsArray.sort(function(a, b) {
+            return a.cuota - b.cuota;
+        });
+        for(var p = 0; p<resultsArray.length; p++){
+            console.log(resultsArray[p].cuota);
+            var tempHtml = resultsArray[p]['html'].replace('{i}', (p+1).toString());
+            tempHtml = tempHtml.replace('{cuota_show}', resultsArray[p]['cuota_show']);
+            tempHtml = tempHtml.replace('{cuota_hidden}', resultsArray[p]['cuota_show']);
+            tempHtml = tempHtml.replace('{monto_financiar}', resultsArray[p]['monto_financiar']);
+            tempHtml = tempHtml.replace('{time_credit}', resultsArray[p]['time_credit']);
+            html += tempHtml;
+        }
+        $('#bank_list').html(html);
 
         window.location.href = "#Pricing";
             }

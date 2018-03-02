@@ -85,6 +85,13 @@
 								</div>
 
 								<div class="form-group">
+									<label class="col-md-4 control-label">Enlace de ver más</label>
+									<div class="col-md-6">
+										<input type="text" class="form-control" name="show_more" value="{{ $bank->show_more }}" required>
+									</div>
+								</div>
+
+								<div class="form-group">
 									<label class="col-md-4 control-label">Imagen</label>
 									<div class="col-md-6">
 										 @if($bank->imagen!=null)
