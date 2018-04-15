@@ -139,6 +139,10 @@
 
                     <li class="{{ (Request::is('news*') || Request::is('addNew*') || Request::is('editNew*') || Request::is('deleteNew*') || Request::is('approveNew*')) ? 'active open' : ''  }}"><a href="{{ url('/news') }}"><i class="fa fa-link"></i> <span>Noticias</span></a></li>
 
+                    <li class="{{ (Request::is('event*') || Request::is('addEve*') || Request::is('editEve*') || Request::is('deleteEve*')) ? 'active open' : ''  }}"><a href="{{ url('/event') }}"><i class="fa fa-link"></i> <span>Eventos</span></a></li>
+
+                    <li class="{{ Request::is('inscripciones*') ? 'active open' : ''  }}"><a href="{{ url('/inscripciones') }}"><i class="fa fa-link"></i> <span>Inscripciones</span></a></li>
+
                     <li class="{{ Request::is('banks*') ? 'active open' : ''  }}"><a href="{{ url('/banks') }}"><i class="fa fa-link"></i> <span>Bancos</span></a></li>
 
                     <li class="{{ Request::is('cvs*') ? 'active open' : ''  }}"><a href="{{ url('/cvs') }}"><i class="fa fa-link"></i> <span>Cvs</span></a></li>
