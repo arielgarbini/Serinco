@@ -44,6 +44,16 @@ Route::post('contacto',function(){
 
 });
 
+Route::post('eventoContacto',function(){
+
+    if(Request::ajax()){
+        \App\EventInscription::create(['name' => Request::get('name'), 'phone' => Request::get('tel'),
+            'email' => Request::get('email'), 'event_id' => Request::get('event')]);
+        return ['response' => true];
+    }
+
+});
+
 Route::get('/soluciones', function () {
     return view('soluciones');
 });
@@ -76,6 +86,21 @@ Route::get('noticia/{id}', function ($id = null){
             }
 });
 
+Route::get('/eventos', function () {
+    $events = \App\Event::where('active','=','1')->orderBy('date', 'desc')->get();
+    return view('eventos')->with('events',$events)->with('data', []);
+});
+
+Route::get('evento/{id}', function ($id = null){
+    $event = \App\Event::find($id);
+    if($event!=null){
+        return view('evento')->with('evento',$event);
+    }else{
+        $events = \App\Event::where('active','=','1')->orderBy('date','DESC')->get();
+        return view('welcome')->with('events',$events);
+    }
+});
+
 Auth::routes();
 
 Route::get('/privado', 'HomeController@index');
@@ -96,6 +121,13 @@ Route::post('editNew', 'NewsController@postEditNew');
 Route::get('deleteNew/{id}', 'NewsController@deleteNew');
 Route::get('approveNew/{id}', 'NewsController@approveNew');
 
+/* ABM Eventos */
+Route::get('inscripciones', 'EventsController@listInc');
+Route::get('event/{id?}', 'EventsController@listEve');
+Route::get('addEve', 'EventsController@getAddEve');
+Route::post('addEve', 'EventsController@postAddEve');
+Route::post('editEve', 'EventsController@postEditEve');
+Route::get('deleteEve/{id}', 'EventsController@deleteEve');
 
 Route::group(['prefix' => 'banks'], function(){
 
